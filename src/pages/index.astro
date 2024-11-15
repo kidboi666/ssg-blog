@@ -1,17 +1,13 @@
 ---
 import Card from "@components/Card.astro";
-
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} >
-    <title>Astro</title>
-  </head>
-  <body>
-    <Card title="안녕하세요" body="누구세요" href="/" />
-  </body>
-</html>
+<Layout title="안녕하세요" />
+<Card title="안녕하세요" body="누구세요" href="/" />
+
+<style>
+  body {
+    background-color: #23262d;
+  }
+</style>
