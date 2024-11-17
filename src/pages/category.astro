@@ -1,37 +1,44 @@
 ---
 import ContainerLayout from "@layouts/ContainerLayout.astro";
+import { Image } from "astro:assets";
+import cssImage from "../assets/images/css.png";
+import htmlImage from "../assets/images/html.png";
+import jsImage from "../assets/images/js.png";
+import reactImage from "../assets/images/react.png";
+import nextImage from "../assets/images/next.png";
+import supabaseImage from "../assets/images/supabase.png";
 ---
 
 <ContainerLayout>
   <ul class="category">
     <li class="category-list">
       <a href="/blog/css">
-        <img src="/src/assets/images/css.png" />
+        <Image src={cssImage} alt="css" />
       </a>
     </li>
     <li class="category-list">
       <a href="/blog/html">
-        <img src="/src/assets/images/html.png" />
+        <Image src={htmlImage} alt="html" />
       </a>
     </li>
     <li class="category-list">
       <a href="/blog/js">
-        <img src="/src/assets/images/js.png" />
+        <Image src={jsImage} alt="js" />
       </a>
     </li>
     <li class="category-list">
       <a href="/blog/react">
-        <img src="/src/assets/images/react.png" />
+        <Image src={reactImage} alt="react" />
       </a>
     </li>
     <li class="category-list">
       <a href="/blog/supabase">
-        <img src="/src/assets/images/supabase.png" />
+        <Image src={supabaseImage} alt="supabase" />
       </a>
     </li>
     <li class="category-list">
       <a href="/blog/next">
-        <img src="/src/assets/images/next.png" />
+        <Image src={nextImage} alt="next" />
       </a>
     </li>
   </ul>
@@ -60,6 +67,7 @@ import ContainerLayout from "@layouts/ContainerLayout.astro";
   }
   .category-list > a > img {
     width: 100%;
+    height: 100%;
   }
   @media (max-width: 768px) {
     .container {
