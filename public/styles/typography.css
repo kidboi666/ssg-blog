@@ -1,10 +1,8 @@
 body {
-  font-size: 12px;
-  font-weight: 300;
+  font-size: 14px;
+  font-weight: 400;
   line-height: 1.5;
-  strong {
-    font-weight: 500;
-  }
+  color: var(--gray-700);
 
   p {
     margin-bottom: 0.4em;
@@ -19,12 +17,14 @@ body {
 
   code {
     font-family: "JetBrains Mono";
-    font-size: 10px;
+    font-size: 12px;
     background-color: var(--blue-accent);
     color: white;
     padding: 0 6px;
+    border: 1px solid var(--blue-accent);
     border-radius: 8px;
   }
+
   pre {
     padding: 20px;
     border-radius: 16px;
@@ -32,9 +32,12 @@ body {
     margin-bottom: 1em;
 
     code {
+      padding: 0;
       background-color: transparent;
+      border: none;
     }
   }
+
   h1,
   h2,
   h3,
@@ -113,6 +116,6 @@ body {
     margin-bottom: 2em;
     margin-top: 1em;
     border-top: 1px;
-    border-top-color: var(--gray-200);
+    border-color: var(--gray-200);
   }
 }
