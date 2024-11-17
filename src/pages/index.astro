@@ -1,13 +1,19 @@
 ---
-import Card from "@components/Card.astro";
-import Layout from "../layouts/Layout.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
-<Layout title="안녕하세요" />
-<Card title="안녕하세요" body="누구세요" href="/" />
-
+<BaseLayout>
+  <div class="main">
+    <h1>안녕하세요!</h1>
+    <h3>이곳은 저의 기술블로그 입니다.</h3>
+  </div>
+</BaseLayout>
 <style>
-  body {
-    background-color: #23262d;
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100dvh - 80px);
   }
 </style>

@@ -1,0 +1,69 @@
+---
+import type { ComponentProps } from "react";
+import Icon from "./Icon.astro";
+
+interface Props extends ComponentProps<"a"> {
+  title?: string;
+  href?: string;
+  variants?: "primary" | "secondary" | "icon";
+  type?: "home" | "category" | "question";
+}
+
+const { href, title, variants = "primary", type } = Astro.props;
+---
+
+<a href={href} class:list={["button", variants]}>
+  {
+    variants === "icon" && type ? (
+      <Icon type={type}>
+        <slot />
+      </Icon>
+    ) : (
+      <h2>
+        {title}
+        <span>&rarr;</span>
+      </h2>
+    )
+  }
+</a>
+
+<style>
+  a {
+    display: flex;
+    align-items: center;
+    border-radius: 16px;
+    padding: 0 12px;
+    text-decoration: none;
+    transition: all 0.15s ease-in-out;
+  }
+  a:is(:active) {
+    transform: scale(95%);
+  }
+  a > h2 {
+    font-size: 12px;
+  }
+  .primary {
+    background-color: var(--main-gray);
+    color: var(--gray-300);
+  }
+  .primary:is(:hover) {
+    color: var(--gray-600);
+    background-color: var(--gray-100);
+  }
+  .secondary {
+    color: var(--gray-600);
+    border: 1px solid var(--gray-600);
+  }
+  .secondary:is(:hover) {
+    background-color: var(--main-gray);
+    color: var(--gray-100);
+  }
+  .icon {
+    padding: 12px;
+    color: var(--gray-500);
+  }
+  .icon:is(:hover) {
+    background-color: var(--main-gray);
+    color: var(--gray-200);
+  }
+</style>

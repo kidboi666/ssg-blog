@@ -1,0 +1,15 @@
+---
+import PostList from "@components/PostList.astro";
+import ContainerLayout from "@layouts/ContainerLayout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("css");
+---
+
+<ContainerLayout collection="css">
+  {
+    posts.map((post) => (
+      <PostList href={`/blog/css/${post.slug}`} title={post.data.title} />
+    ))
+  }
+</ContainerLayout>

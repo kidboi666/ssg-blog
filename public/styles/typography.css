@@ -1,0 +1,118 @@
+body {
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 1.5;
+  strong {
+    font-weight: 500;
+  }
+
+  p {
+    margin-bottom: 0.4em;
+    margin-top: 0.4em;
+    line-height: 1.5;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  code {
+    font-family: "JetBrains Mono";
+    font-size: 10px;
+    background-color: var(--blue-accent);
+    color: white;
+    padding: 0 6px;
+    border-radius: 8px;
+  }
+  pre {
+    padding: 20px;
+    border-radius: 16px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+
+    code {
+      background-color: transparent;
+    }
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-top: 1em;
+    margin-bottom: 0.4em;
+  }
+  h1 {
+    font-size: 1.875rem /* 30px */;
+    line-height: 2.25rem /* 36px */;
+  }
+  h2 {
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+  }
+  h3 {
+    font-size: 1.25rem /* 20px */;
+    line-height: 1.75rem /* 28px */;
+  }
+  h4 {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  h5 {
+    font-size: 0.85rem;
+    line-height: 1.25rem;
+  }
+  h6 {
+    font-size: 0.5rem;
+    line-height: 1rem;
+  }
+  aside {
+    position: relative;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-radius: 0.3em;
+    background-color: var(--gray-100);
+    padding: 1em;
+    padding-left: 1.4em;
+    overflow: hidden;
+  }
+  aside::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: var(--blue-accent);
+  }
+  table {
+    width: 100%;
+  }
+  th,
+  tr,
+  td {
+    border: 1px solid var(--gray-200);
+    padding: 0.6em;
+  }
+  ol {
+    list-style: decimal;
+    list-style-position: inside;
+    padding-top: 0.2em;
+  }
+  ul {
+    list-style: disc;
+    list-style-position: inside;
+    padding-top: 0.2em;
+  }
+  li {
+    margin-top: 0.4em;
+  }
+  hr {
+    margin-bottom: 2em;
+    margin-top: 1em;
+    border-top: 1px;
+    border-top-color: var(--gray-200);
+  }
+}

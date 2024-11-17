@@ -1,0 +1,21 @@
+:root {
+  --main-dark: #13151a;
+  --main-gray: #23262d;
+  --main-light-gray: #424242;
+  --gray-100: #ededed;
+  --gray-200: #d6d6d6;
+  --gray-300: #bfbfbf;
+  --gray-400: #9c9c9c;
+  --gray-500: #707070;
+  --gray-600: #424242;
+  --blue-accent: #3b82f6;
+  --accent: rgb(136, 58, 234);
+  --accent-light: rgb(224, 204, 250);
+  --accent-dark: rgb(49, 10, 101);
+  --accent-gradient: linear-gradient(
+    45deg,
+    rgb(var(--accent)),
+    rgb(var(--accent-light)) 30%,
+    white 60%
+  );
+}

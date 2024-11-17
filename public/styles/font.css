@@ -1,0 +1,23 @@
+@font-face {
+  font-family: "Goorm Sans";
+  src: url("/fonts/goorm-sans-regular") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Goorm Sans";
+  src: url("/fonts/goorm-sans-medium") format("woff2");
+  font-style: normal;
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Goorm Sans";
+  src: url("/fonts/goorm-sans-bold") format("woff2");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("/fonts/JetBrainsMono-Regular") format("woff2");
+  font-style: normal;
+}

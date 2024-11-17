@@ -1,0 +1,72 @@
+---
+import ContainerLayout from "@layouts/ContainerLayout.astro";
+---
+
+<ContainerLayout>
+  <ul class="category">
+    <li class="category-list">
+      <a href="/blog/css">
+        <img src="/public/images/css.png" />
+      </a>
+    </li>
+    <li class="category-list">
+      <a href="/blog/html">
+        <img src="/public/images/html.png" />
+      </a>
+    </li>
+    <li class="category-list">
+      <a href="/blog/js">
+        <img src="/public/images/js.png" />
+      </a>
+    </li>
+    <li class="category-list">
+      <a href="/blog/react">
+        <img src="/public/images/react.png" />
+      </a>
+    </li>
+    <li class="category-list">
+      <a href="/blog/supabase">
+        <img src="/public/images/supabase.png" />
+      </a>
+    </li>
+    <li class="category-list">
+      <a href="/blog/next">
+        <img src="/public/images/next.png" />
+      </a>
+    </li>
+  </ul>
+</ContainerLayout>
+
+<style>
+  .category {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    gap: 20px;
+  }
+  .category-list {
+    width: 100%;
+  }
+  .category-list > a {
+    padding: 20px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+  }
+  .category-list > a:is(:hover) {
+    background-color: var(--gray-100);
+  }
+  .category-list > a > img {
+    width: 100%;
+  }
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+    }
+    .category {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+</style>
