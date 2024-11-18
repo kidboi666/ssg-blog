@@ -14,7 +14,7 @@ const post = await getEntry(frontmatter.category, slug);
 const { headings } = await render(post);
 ---
 
-<BaseLayout>
+<BaseLayout headings={headings}>
   <div class="container">
     <CategoryNavigation posts={posts} category={frontmatter.category} />
     <div class="post">

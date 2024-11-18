@@ -19,10 +19,10 @@ const { href, title, variants = "primary", type } = Astro.props;
         <slot />
       </Icon>
     ) : (
-      <h2>
+      <p>
         {title}
         <span>&rarr;</span>
-      </h2>
+      </p>
     )
   }
 </a>
@@ -34,13 +34,15 @@ const { href, title, variants = "primary", type } = Astro.props;
     border-radius: 16px;
     padding: 0 12px;
     text-decoration: none;
+    justify-content: center;
     transition: all 0.15s ease-in-out;
   }
   a:is(:active) {
     transform: scale(95%);
   }
-  a > h2 {
+  a > p {
     font-size: 12px;
+    margin: 0;
   }
   .primary {
     background-color: var(--main-gray);

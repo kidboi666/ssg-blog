@@ -1,11 +1,13 @@
 ---
 import Header from "@components/Header.astro";
+import HeaderPostInfo from "@components/HeaderPostInfo.astro";
 
 interface Props {
   title?: string;
+  headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { title } = Astro.props;
+const { title, headings } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,7 +26,8 @@ const { title } = Astro.props;
     <link rel="stylesheet" href="/styles/typography.css" />
   </head>
   <body>
-    <Header />
+    <Header headings={headings} />
+    <HeaderPostInfo headings={headings} />
     <slot />
   </body>
 </html>
