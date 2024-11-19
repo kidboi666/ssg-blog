@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "리액트 요약"
-category: "react"
+category: "React"
 pubDate: 2024-11-17
 tags: ["React"]
 ---

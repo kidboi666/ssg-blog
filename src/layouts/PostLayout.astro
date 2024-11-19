@@ -1,29 +1,29 @@
 ---
 import PostInfo from "@components/PostInfo.astro";
 import BaseLayout from "./BaseLayout.astro";
-import { getCollection } from "astro:content";
-import CategoryNavigation from "@components/CategoryNavigation.astro";
 import { getEntry } from "astro:content";
-import { render } from "astro:content";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
 
-const posts = await getCollection(frontmatter.category);
 const post = await getEntry(frontmatter.category, slug);
-const { headings } = await render(post);
+const { headings } = await post.render(post);
 ---
 
 <BaseLayout headings={headings}>
-  <CategoryNavigation posts={posts} category={frontmatter.category} />
-  <div class="flex w-full flex-col justify-center pl-72 xl:flex-row">
+  <div class="flex w-full flex-col justify-center xl:flex-row">
     <PostInfo headings={headings} />
-    <div class="post w-full max-w-[752px] bg-white px-8">
-      <h1>{frontmatter.title}</h1>
-      <p class="text-zinc-500">
-        등록일 : {new Date(frontmatter.pubDate).toLocaleDateString()}
-      </p>
-      <slot />
+    <div class="my-8 px-8">
+      <div class="max-w-[752px]">
+        <h1 class="text-5xl font-semibold">{frontmatter.title}</h1>
+        <p class="mt-2 text-zinc-500">
+          등록일 : {new Date(frontmatter.pubDate).toLocaleDateString()}
+        </p>
+      </div>
+      <div class="mt-8 w-full border-b"></div>
+      <div class="post max-w-[752px]">
+        <slot />
+      </div>
     </div>
   </div>
 </BaseLayout>
@@ -47,7 +47,6 @@ const { headings } = await render(post);
         }
       });
     });
-    console.log(observer);
     // 모든 섹션을 관찰
     document.getElementsByTagName("h1").forEach((section) => {
       observer.observe(section);

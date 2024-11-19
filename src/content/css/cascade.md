@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Cascade"
-category: "css"
+category: "CSS"
 pubDate: 2024-11-17
 tags: ["Cascade", "CSS"]
 ---

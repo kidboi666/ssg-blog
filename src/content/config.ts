@@ -1,41 +1,45 @@
 import { defineCollection, z } from "astro:content";
 
-const html = defineCollection({
+const HTML = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     pubDate: z.date(),
+    category: z.string(),
   }),
 });
-const css = defineCollection({
+const CSS = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     pubDate: z.date(),
+    category: z.string(),
   }),
 });
-const react = defineCollection({
+const React = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     pubDate: z.date(),
+    category: z.string(),
   }),
 });
-const js = defineCollection({
+const JavaScript = defineCollection({
   type: "content",
   schema: z.object({
     title: z.string(),
     tags: z.array(z.string()),
     pubDate: z.date(),
+    category: z.string(),
   }),
 });
 
 export const collections = {
-  html,
-  css,
-  react,
-  js,
+  HTML,
+  CSS,
+  React,
+  JavaScript,
 };
