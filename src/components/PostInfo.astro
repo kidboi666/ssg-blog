@@ -9,18 +9,18 @@ const { headings } = Astro.props;
 ---
 
 <aside
-  class="min-w-44 max-w-60 border-l border-zinc-200 bg-white p-6 xl:order-2"
+  class="w-full min-w-44 max-w-80 bg-white p-6 xl:order-2 xl:border-l xl:border-zinc-200"
 >
   <div class="sticky top-20 xl:h-[calc(100dvh-120px)]">
     <div class="flex h-full flex-col gap-2 overflow-y-scroll scrollbar-none">
       <!-- <Button title="펼쳐보기" variants="secondary" /> -->
-      <h2>목차</h2>
+      <h2 class="text-lg">목차</h2>
       {
         headings.map((heading) => (
           <a href={`#${heading.slug}`}>
             <p
               class:list={[
-                "heading text-xs",
+                "heading text-sm text-zinc-500",
                 { heading1: heading.depth === 1 },
                 { heading2: heading.depth === 2 },
                 { heading3: heading.depth === 3 },

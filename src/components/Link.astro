@@ -4,14 +4,16 @@ import Icon from "./Icon.astro";
 import { cva } from "class-variance-authority";
 import cn from "src/lib/cn";
 
-interface Props extends ComponentProps<"button"> {
-  intent?: "primary" | "secondary" | "icon" | "teritory";
-  padding?: "sm" | "md" | "lg";
-  size?: "sm" | "md" | "lg";
+interface Props extends ComponentProps<"a"> {
+  href?: string;
+  intent?: "primary" | "secondary" | "icon";
   icon?: "home" | "category" | "question";
+  size?: "sm" | "md" | "lg";
+  padding?: "sm" | "md" | "lg";
   className?: string;
 }
-const button = cva("transition", {
+
+const link = cva("transition", {
   variants: {
     intent: {
       primary: [
@@ -21,7 +23,6 @@ const button = cva("transition", {
         "hover:text-zinc-200",
       ],
       secondary: ["text-zinc-500", "hover:text-zinc-800"],
-      teritory: [""],
       icon: ["hover:bg-zinc-800", "hover:text-zinc-200", "rounded-lg"],
     },
     size: {
@@ -40,17 +41,26 @@ const button = cva("transition", {
   },
 });
 
-const { size, padding, intent = "primary", icon, className } = Astro.props;
+const {
+  href,
+  className,
+  size = "md",
+  intent = "primary",
+  padding,
+  icon,
+} = Astro.props;
 ---
 
-<button id="button" class={cn(button({ intent, size, padding }), className)}>
+<a href={href} class={cn(link({ intent, size, padding }), className)}>
   {
     intent === "icon" && icon ? (
       <Icon icon={icon}>
         <slot />
       </Icon>
     ) : (
-      <slot />
+      <p>
+        <slot />
+      </p>
     )
   }
-</button>
+</a>

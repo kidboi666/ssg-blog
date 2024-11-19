@@ -1,35 +1,19 @@
 ---
 import { getCollection } from "astro:content";
+import CategoryList from "./CategoryList.astro";
 
 const categories = ["HTML", "CSS", "JavaScript", "React"] as const;
 ---
 
 <nav
-  class="fixed left-0 top-0 z-30 h-dvh w-72 overflow-y-scroll border border-zinc-200 bg-white p-5 pt-20 scrollbar-none"
+  class="fixed left-0 top-0 z-30 h-dvh w-64 overflow-y-scroll border border-zinc-200 bg-white p-5 pt-20 scrollbar-none"
 >
   <div class="flex flex-col gap-2">
-    <!-- {
-      posts.map((post: { slug: any; data: { title: string } }) => (
-        <a href={`/blog/${category}/${post.slug}`}>{post.data.title}</a>
-      ))
-    } -->
     {
       categories.map(async (category) => {
         const posts = await getCollection(category);
 
-        return (
-          <div>
-            <h3>{category}</h3>
-            {posts.map((post) => (
-              <a
-                href={`/blog/${category}/${post.slug}`}
-                class="ml-4 block text-sm"
-              >
-                {post.data.title}
-              </a>
-            ))}
-          </div>
-        );
+        return <CategoryList category={category} posts={posts} />;
       })
     }
   </div>

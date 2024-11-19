@@ -11,17 +11,17 @@ const { headings } = await render(post);
 ---
 
 <BaseLayout headings={headings}>
-  <div class="flex w-full flex-col justify-center xl:flex-row">
+  <div class="flex w-full flex-col xl:flex-row">
     <PostInfo headings={headings} />
-    <div class="my-8 px-8">
-      <div class="max-w-[752px]">
+    <div class="w-full">
+      <div class="my-8 w-full max-w-[752px] px-8">
         <h1 class="text-5xl font-semibold">{frontmatter.title}</h1>
-        <p class="mt-2 text-zinc-500">
+        <p class="mt-2 text-sm text-zinc-500">
           등록일 : {new Date(frontmatter.pubDate).toLocaleDateString()}
         </p>
       </div>
       <div class="mt-8 w-full border-b"></div>
-      <div class="post max-w-[752px]">
+      <div class="post my-8 w-full max-w-[752px] px-8">
         <slot />
       </div>
     </div>

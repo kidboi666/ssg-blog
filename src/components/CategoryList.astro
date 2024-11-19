@@ -1,0 +1,54 @@
+---
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+import Link from "./Link.astro";
+
+const { category, posts } = Astro.props;
+const { slug } = Astro.params;
+---
+
+<category-navigation data-category={category}>
+  <Button
+    intent="teritory"
+    className="relative z-10 flex w-full items-center justify-between bg-white text-lg"
+  >
+    {category}
+    <Icon icon="arrow" />
+  </Button>
+  <div id="list" class="ml-2 flex hidden flex-col">
+    {
+      posts.map((post: any) => (
+        <Link
+          href={`/blog/${category}/${post.slug}`}
+          size="sm"
+          intent={post.slug === slug ? "primary" : "secondary"}
+          padding="md"
+        >
+          {post.data.title}
+        </Link>
+      ))
+    }
+  </div>
+</category-navigation>
+
+<script>
+  class CategoryNavigation extends HTMLElement {
+    connectedCallback() {
+      const category = this.dataset.category;
+      const button = this.querySelector("#button");
+      const list = this.querySelector("#list");
+
+      const isExpanded =
+        sessionStorage.getItem(`category-${category}`) === "true";
+      if (isExpanded) {
+        list?.classList.remove("hidden");
+      }
+
+      button?.addEventListener("click", () => {
+        const isHidden = list?.classList.toggle("hidden");
+        sessionStorage.setItem(`category-${category}`, String(!isHidden));
+      });
+    }
+  }
+  customElements.define("category-navigation", CategoryNavigation);
+</script>
