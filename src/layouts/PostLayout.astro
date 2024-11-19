@@ -1,13 +1,13 @@
 ---
 import PostInfo from "@components/PostInfo.astro";
 import BaseLayout from "./BaseLayout.astro";
-import { getEntry } from "astro:content";
+import { getEntry, render } from "astro:content";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
 
 const post = await getEntry(frontmatter.category, slug);
-const { headings } = await post.render(post);
+const { headings } = await render(post);
 ---
 
 <BaseLayout headings={headings}>
