@@ -3,39 +3,9 @@ import BaseLayout from "./BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="container">
-    <div class="post">
+  <div class="flex w-full mx-0 justify-center my-10 md:mx-5 gap-10">
+    <div class="bg-white w-full p-5 rounded-2xl md:w-[752px] shadow-lg">
       <slot />
     </div>
   </div>
 </BaseLayout>
-
-<style>
-  .container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 40px;
-    margin-bottom: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
-    gap: 40px;
-  }
-  .post {
-    background-color: white;
-    padding: 20px;
-    border-radius: 16px;
-    width: 752px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  }
-  @media (max-width: 768px) {
-    .container {
-      width: 100%;
-      margin-left: 0;
-      margin-right: 0;
-    }
-    .post {
-      width: 100%;
-    }
-  }
-</style>

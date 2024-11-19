@@ -4,13 +4,13 @@ interface Props {
   width?: number;
   height?: number;
   viewBox?: string;
-  type: "home" | "category" | "question";
+  icon: "home" | "category" | "question";
 }
 const {
   size = 20,
   width,
   height,
-  type,
+  icon,
   viewBox = "0 -960 960 960",
 } = Astro.props;
 
@@ -26,7 +26,7 @@ const icons = {
   },
 };
 
-const { d } = icons[type];
+const { d } = icons[icon];
 ---
 
 <svg

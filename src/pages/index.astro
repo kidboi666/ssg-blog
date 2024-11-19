@@ -3,17 +3,8 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
-  <div class="main">
+  <div class="flex h-[calc(100dvh-80px)] flex-col items-center justify-center">
     <h1>안녕하세요!</h1>
     <h3>이곳은 저의 기술블로그 입니다.</h3>
   </div>
 </BaseLayout>
-<style>
-  .main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: calc(100dvh - 80px);
-  }
-</style>

@@ -6,22 +6,23 @@ interface Props extends ComponentProps<"a"> {
   title?: string;
   href?: string;
   variants?: "primary" | "secondary" | "icon";
-  type?: "home" | "category" | "question";
+  icon?: "home" | "category" | "question";
 }
 
-const { href, title, variants = "primary", type } = Astro.props;
+const { href, title, variants = "primary", icon } = Astro.props;
 ---
 
 <a href={href} class:list={["button", variants]}>
   {
-    variants === "icon" && type ? (
-      <Icon type={type}>
+    variants === "icon" && icon ? (
+      <Icon icon={icon}>
         <slot />
       </Icon>
     ) : (
       <p>
-        {title}
-        <span>&rarr;</span>
+        <slot />
+        {title && title}
+        {title && <span>&rarr;</span>}
       </p>
     )
   }

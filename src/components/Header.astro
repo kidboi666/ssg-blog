@@ -1,28 +1,33 @@
 ---
 import Button from "./Button.astro";
+import cssImage from "../assets/images/css.png";
+import htmlImage from "../assets/images/html.png";
+import jsImage from "../assets/images/js.png";
+import reactImage from "../assets/images/react.png";
+import nextImage from "../assets/images/next.png";
+import supabaseImage from "../assets/images/supabase.png";
+import { Image } from "astro:assets";
 ---
 
-<header class="header-container">
-  <Button variants="icon" href="/" type="home" />
-  <Button variants="icon" href="/category" type="category" />
-  <Button variants="icon" href="/resume" type="question" />
+<header
+  class="sticky left-0 top-0 z-50 flex w-full gap-6 border-b border-zinc-200 bg-zinc-100 px-3 py-1"
+>
+  <Button variants="icon" href="/" icon="home" />
+  <Button variants="icon" href="/blog/css">
+    <Image src={cssImage} alt="css" width={24} />
+  </Button>
+  <Button variants="icon" href="/blog/html">
+    <Image src={htmlImage} alt="html" width={24} />
+  </Button>
+  <Button variants="icon" href="/blog/js">
+    <Image src={jsImage} alt="js" width={24} />
+  </Button>
+  <Button variants="icon" href="/blog/react">
+    <Image src={reactImage} alt="react" width={24} />
+  </Button>
+  <Button variants="icon" href="/blog/next">
+    <Image src={nextImage} alt="next" width={24} />
+  </Button>
+  <Button variants="icon" href="/resume" icon="question" />
 </header>
-
-<style>
-  .header-container {
-    border-radius: 16px;
-    width: 100%;
-    padding: 4px 12px;
-    position: sticky;
-    z-index: 20;
-    display: flex;
-    gap: 24px;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-  }
-</style>
+<!-- <ThemeButton /> -->

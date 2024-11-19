@@ -1,13 +1,9 @@
 ---
-layout: ../layouts/ContainerLayout.astro
+layout: ../layouts/ResumeLayout.astro
 title: "My First Blog Post"
-pubDate: 2022-07-01
-description: "This is the first post of my new Astro blog."
-author: "Astro Learner"
-image:
-  url: "https://docs.astro.build/assets/rose.webp"
-  alt: "The Astro logo on a dark background with a pink glow."
-tags: ["astro", "blogging", "learning in public"]
+pubDate: 2024-10-20
+description: "프론트엔드 개발자 이진욱"
+author: "이진욱"
 ---
 
 사용자를 고려한 UI 개발에 집중하며, 팀원들과의 협업을 통해 더 나은 결과물을 만들어내는 데 열정을 가지고 있습니다.

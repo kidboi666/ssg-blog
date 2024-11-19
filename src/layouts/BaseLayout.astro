@@ -1,6 +1,5 @@
 ---
 import Header from "@components/Header.astro";
-import HeaderPostInfo from "@components/HeaderPostInfo.astro";
 
 interface Props {
   title?: string;
@@ -19,7 +18,7 @@ const { title, headings } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link rel="stylesheet" href="/styles/reset.css" />
+    <!-- <link rel="stylesheet" href="/styles/reset.css" /> -->
     <link rel="stylesheet" href="/styles/font.css" />
     <link rel="stylesheet" href="/styles/base.css" />
     <link rel="stylesheet" href="/styles/variables.css" />
@@ -27,7 +26,6 @@ const { title, headings } = Astro.props;
   </head>
   <body>
     <Header headings={headings} />
-    <HeaderPostInfo headings={headings} />
     <slot />
   </body>
 </html>

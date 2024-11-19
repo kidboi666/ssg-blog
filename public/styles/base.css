@@ -1,22 +1,8 @@
-body {
-  background: linear-gradient(
-    to right,
-    #06b6d4 0%,
-    #3b82f6 25%,
-    #06b6d4 50%,
-    #06b6d4 75%,
-    #3b82f6 100%
-  );
-  background-size: 400%;
-  font-family: "Goorm Sans", sans-serif;
+html.dark {
+  background-color: #0d0950;
+  color: #fff;
 }
-.dark {
-  background: linear-gradient(
-    to right,
-    #283e51 0%,
-    #0a1526 25%,
-    #283e51 50%,
-    #283e51 75%,
-    #0a1526 100%
-  );
+
+.dark .nav-links a {
+  color: #fff;
 }
