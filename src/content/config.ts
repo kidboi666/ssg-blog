@@ -1,4 +1,15 @@
 import { defineCollection, z } from "astro:content";
+export const categories = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "NextJS",
+  "Axios",
+  "Web",
+  "Redux",
+] as const;
 
 const HTML = defineCollection({
   type: "content",
@@ -36,10 +47,60 @@ const JavaScript = defineCollection({
     category: z.string(),
   }),
 });
+const Axios = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
+const TypeScript = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
+const NextJS = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
+const Web = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
+const Redux = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
 
 export const collections = {
   HTML,
   CSS,
+  NextJS,
   React,
   JavaScript,
+  TypeScript,
+  Axios,
+  Web,
+  Redux,
 };

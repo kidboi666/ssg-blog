@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import CategoryList from "./CategoryList.astro";
-
-const categories = ["HTML", "CSS", "JavaScript", "React"] as const;
+import { categories } from "src/content/config";
 ---
 
 <nav

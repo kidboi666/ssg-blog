@@ -13,11 +13,11 @@ interface Props extends ComponentProps<"a"> {
   className?: string;
 }
 
-const link = cva("transition rounded-lg", {
+const link = cva("transition rounded-lg flex", {
   variants: {
     intent: {
       primary: ["bg-blue-500", "text-white", "hover:bg-blue-400"],
-      secondary: ["text-zinc-500", "hover:text-zinc-800"],
+      secondary: ["text-zinc-500", "hover:text-zinc-800", "hover:bg-zinc-100"],
       icon: ["hover:bg-blue-500", "hover:text-white", "rounded-lg"],
     },
     size: {

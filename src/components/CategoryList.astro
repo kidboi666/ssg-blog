@@ -1,10 +1,13 @@
 ---
+import cn from "src/lib/cn";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 import Link from "./Link.astro";
 
 const { category, posts } = Astro.props;
 const { slug } = Astro.params;
+
+const isExpanded = false;
 ---
 
 <category-navigation data-category={category}>
@@ -13,9 +16,9 @@ const { slug } = Astro.params;
     className="relative z-10 mb-2 flex w-full items-center justify-between bg-white text-base"
   >
     {category}
-    <Icon icon="arrow" />
+    <Icon id="arrow" icon="arrow" className="-rotate-90 transition-transform" />
   </Button>
-  <div id="list" class="ml-2 flex hidden flex-col">
+  <div id="list" class={cn("ml-2 flex flex-col", isExpanded ? "" : "hidden")}>
     {
       posts.map((post: any) => (
         <Link
@@ -37,15 +40,18 @@ const { slug } = Astro.params;
       const category = this.dataset.category;
       const button = this.querySelector("#button");
       const list = this.querySelector("#list");
+      const arrow = this.querySelector("#arrow");
 
       const isExpanded =
         sessionStorage.getItem(`category-${category}`) === "true";
       if (isExpanded) {
         list?.classList.remove("hidden");
+        arrow?.classList.remove("-rotate-90");
       }
 
       button?.addEventListener("click", () => {
         const isHidden = list?.classList.toggle("hidden");
+        arrow?.classList.toggle("-rotate-90");
         sessionStorage.setItem(`category-${category}`, String(!isHidden));
       });
     }
