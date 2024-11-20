@@ -16,7 +16,7 @@ const isExpanded = false;
     className="relative z-10 mb-2 flex w-full items-center justify-between bg-white text-base"
   >
     {category}
-    <Icon icon="arrow" />
+    <Icon id="arrow" icon="arrow" className="-rotate-90 transition-transform" />
   </Button>
   <div id="list" class={cn("ml-2 flex flex-col", isExpanded ? "" : "hidden")}>
     {
@@ -40,15 +40,18 @@ const isExpanded = false;
       const category = this.dataset.category;
       const button = this.querySelector("#button");
       const list = this.querySelector("#list");
+      const arrow = this.querySelector("#arrow");
 
       const isExpanded =
         sessionStorage.getItem(`category-${category}`) === "true";
       if (isExpanded) {
         list?.classList.remove("hidden");
+        arrow?.classList.remove("-rotate-90");
       }
 
       button?.addEventListener("click", () => {
         const isHidden = list?.classList.toggle("hidden");
+        arrow?.classList.toggle("-rotate-90");
         sessionStorage.setItem(`category-${category}`, String(!isHidden));
       });
     }
