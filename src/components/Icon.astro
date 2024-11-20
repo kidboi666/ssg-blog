@@ -4,7 +4,7 @@ interface Props {
   width?: number;
   height?: number;
   viewBox?: string;
-  icon: "home" | "category" | "question" | "arrow";
+  icon: "home" | "category" | "question" | "arrow" | "menu" | "cancel";
   className?: string;
 }
 const {
@@ -28,6 +28,12 @@ const icons = {
   },
   arrow: {
     d: "M480-344 240-584l56-56 184 184 184-184 56 56-240 240Z",
+  },
+  menu: {
+    d: "M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z",
+  },
+  cancel: {
+    d: "m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z",
   },
 };
 

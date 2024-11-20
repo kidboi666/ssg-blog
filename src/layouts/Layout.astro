@@ -9,10 +9,9 @@ import "../../public/styles/typography.css";
 interface Props {
   title?: string;
   headings?: { depth: number; slug: string; text: string }[];
-  frontmatter?: any;
 }
 
-const { title, headings, frontmatter } = Astro.props;
+const { title, headings } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,7 +27,7 @@ const { title, headings, frontmatter } = Astro.props;
   <body>
     <CategoryNavigation />
     <Header headings={headings} />
-    <main class="pl-72 pt-16">
+    <main class="animate-fade-in pt-16 md:pl-64">
       <slot />
     </main>
   </body>

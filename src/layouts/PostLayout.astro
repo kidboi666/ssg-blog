@@ -1,6 +1,6 @@
 ---
-import PostInfo from "@components/PostInfo.astro";
-import BaseLayout from "./BaseLayout.astro";
+import PostTableOfContents from "@components/PostTableOfContents.astro";
+import Layout from "./Layout.astro";
 import { getEntry, render } from "astro:content";
 
 const { frontmatter } = Astro.props;
@@ -10,10 +10,10 @@ const post = await getEntry(frontmatter.category, slug);
 const { headings } = await render(post);
 ---
 
-<BaseLayout headings={headings}>
-  <div class="flex w-full flex-col xl:flex-row">
-    <PostInfo headings={headings} />
-    <div class="w-full">
+<Layout headings={headings}>
+  <div class="flex w-full flex-col xl:flex-row xl:justify-center">
+    <PostTableOfContents headings={headings} />
+    <div class="'w-full">
       <div class="my-8 w-full max-w-[752px] px-8">
         <h1 class="text-5xl font-semibold">{frontmatter.title}</h1>
         <p class="mt-2 text-sm text-zinc-500">
@@ -21,12 +21,12 @@ const { headings } = await render(post);
         </p>
       </div>
       <div class="mt-8 w-full border-b"></div>
-      <div class="post my-8 w-full max-w-[752px] px-8">
+      <section class="post my-8 w-full max-w-[752px] px-8">
         <slot />
-      </div>
+      </section>
     </div>
   </div>
-</BaseLayout>
+</Layout>
 
 <script is:inline>
   const navLinks = document.querySelectorAll(".heading");

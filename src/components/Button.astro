@@ -8,21 +8,18 @@ interface Props extends ComponentProps<"button"> {
   intent?: "primary" | "secondary" | "icon" | "teritory";
   padding?: "sm" | "md" | "lg";
   size?: "sm" | "md" | "lg";
-  icon?: "home" | "category" | "question";
+  icon?: "home" | "category" | "question" | "menu" | "cancel";
   className?: string;
+  id?: string;
 }
+
 const button = cva("transition", {
   variants: {
     intent: {
-      primary: [
-        "bg-zinc-800",
-        "text-zinc-200",
-        "hover:bg-zinc-400",
-        "hover:text-zinc-200",
-      ],
+      primary: ["bg-blue-500", "text-white", "hover:bg-blue-400"],
       secondary: ["text-zinc-500", "hover:text-zinc-800"],
       teritory: [""],
-      icon: ["hover:bg-zinc-800", "hover:text-zinc-200", "rounded-lg"],
+      icon: ["hover:bg-blue-500", "hover:text-white", "rounded-lg"],
     },
     size: {
       sm: ["text-sm"],
@@ -30,9 +27,6 @@ const button = cva("transition", {
       lg: ["text-lg"],
     },
     padding: {
-      // sm: ["py-1", "px-2"],
-      // md: ["py-2", "px-3"],
-      // lg: ["py-3", "px-4"],
       sm: ["p-1"],
       md: ["p-2"],
       lg: ["p-3"],
@@ -40,10 +34,13 @@ const button = cva("transition", {
   },
 });
 
-const { size, padding, intent = "primary", icon, className } = Astro.props;
+const { size, padding, intent = "primary", icon, className, id } = Astro.props;
 ---
 
-<button id="button" class={cn(button({ intent, size, padding }), className)}>
+<button
+  id={id ? id : "button"}
+  class={cn(button({ intent, size, padding }), className)}
+>
   {
     intent === "icon" && icon ? (
       <Icon icon={icon}>
