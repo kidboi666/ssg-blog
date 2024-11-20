@@ -47,27 +47,33 @@
   margin-top: 1em;
   margin-bottom: 0.4em;
 }
-.post h1 {
+.post h1,
+.post h1 code {
   font-size: 1.875rem /* 30px */;
   line-height: 2.25rem /* 36px */;
 }
-.post h2 {
+.post h2,
+.post h2 code {
   font-size: 1.5rem /* 24px */;
   line-height: 2rem /* 32px */;
 }
-.post h3 {
+.post h3,
+.post h3 code {
   font-size: 1.25rem /* 20px */;
   line-height: 1.75rem /* 28px */;
 }
-.post h4 {
+.post h4,
+.post h4 code {
   font-size: 1rem;
   line-height: 1.5rem;
 }
-.post h5 {
+.post h5,
+.post h5 code {
   font-size: 0.85rem;
   line-height: 1.25rem;
 }
-.post h6 {
+.post h6,
+.post h6 code {
   font-size: 0.5rem;
   line-height: 1rem;
 }
@@ -75,21 +81,21 @@
   position: relative;
   margin-bottom: 1em;
   margin-top: 1em;
-  border-radius: 0.3em;
+  border-radius: 16px;
   background-color: var(--gray-100);
   padding: 1em;
   padding-left: 1.4em;
   overflow: hidden;
 }
-.post aside::before {
+/* .post aside::before {
   content: "";
   position: absolute;
   left: 0;
   top: 0;
   height: 100%;
-  width: 4px;
+  width: 8px;
   background-color: var(--blue-accent);
-}
+} */
 .post table {
   width: 100%;
 }
