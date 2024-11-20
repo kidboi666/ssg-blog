@@ -1,10 +1,13 @@
 ---
+import cn from "src/lib/cn";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 import Link from "./Link.astro";
 
 const { category, posts } = Astro.props;
 const { slug } = Astro.params;
+
+const isExpanded = false;
 ---
 
 <category-navigation data-category={category}>
@@ -15,7 +18,7 @@ const { slug } = Astro.params;
     {category}
     <Icon icon="arrow" />
   </Button>
-  <div id="list" class="ml-2 flex hidden flex-col">
+  <div id="list" class={cn("ml-2 flex flex-col", isExpanded ? "" : "hidden")}>
     {
       posts.map((post: any) => (
         <Link
