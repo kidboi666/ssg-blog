@@ -1,0 +1,2 @@
+[build]
+command = "pnpm exec playwright install && pnpm run build"
