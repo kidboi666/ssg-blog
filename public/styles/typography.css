@@ -1,4 +1,4 @@
-.post {
+/* .post {
   @apply text-sm font-normal leading-6 text-zinc-700 dark:text-zinc-400;
 }
 
@@ -15,7 +15,11 @@
 }
 
 .post .expressive-code {
-  @apply mb-[1em] mt-[1em] rounded-2xl;
+  @apply mb-[1em] mt-[1em] w-full rounded-2xl;
+}
+
+.post .flowchart {
+  @apply m-auto;
 }
 
 .post pre > code {
@@ -66,7 +70,7 @@
 }
 
 .post table {
-  @apply w-full;
+  @apply w-full overflow-x-auto;
 }
 
 .post th,
@@ -89,4 +93,4 @@
 
 .post hr {
   @apply mb-[2em] mt-[1em] w-full border-t border-zinc-200 dark:border-zinc-700;
-}
+} */

@@ -1,0 +1,23 @@
+.post .expressive-code {
+  @apply mb-[1em] mt-[1em] w-full rounded-2xl;
+}
+
+/* .post code {
+  @apply rounded-lg border border-blue-400 bg-blue-400 px-1.5 py-0 font-mono text-xs text-white dark:border-blue-800 dark:bg-blue-800 dark:text-zinc-100;
+} */
+
+.post .flowchart {
+  @apply m-auto;
+}
+
+.post pre > code {
+  @apply border-0 bg-transparent p-0 dark:bg-transparent;
+}
+
+.post aside {
+  @apply relative mb-[1em] mt-[1em] overflow-hidden rounded-2xl bg-zinc-200 p-[1em] pl-[1.4em] dark:bg-zinc-800;
+}
+
+.post table {
+  @apply w-full overflow-x-auto;
+}

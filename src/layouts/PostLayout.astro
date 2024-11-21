@@ -12,11 +12,13 @@ const { headings } = await post.render(post);
 ---
 
 <Layout headings={headings}>
-  <div class="flex w-full flex-col xl:flex-row xl:justify-center">
+  <div class="flex flex-col lg:flex-row lg:justify-center">
     <ToggleTableOfContents client:only="preact" headings={headings} />
-    <div class="'w-full">
-      <div class="my-8 w-full max-w-[752px] px-8">
-        <h1 class="text-5xl font-semibold text-zinc-700 dark:text-zinc-200">
+    <div
+      class="post prose prose-zinc dark:prose-invert prose-headings:text-zinc-700 dark:prose-headings:text-zinc-200 dark:prose-strong:text-zinc-200 prose-strong:text-zinc-700 prose-p:text-zinc-600 dark:prose-code:bg-zinc-600 prose-code:bg-zinc-300 dark:prose-p:text-zinc-400 prose-headings:mt-[1em] max-w-none"
+    >
+      <div class="my-8 w-full px-4 md:px-8 lg:max-w-[752px]">
+        <h1 class="m-0 text-5xl font-semibold">
           {frontmatter.title}
         </h1>
         <p class="ml-px mt-2 text-sm text-zinc-500">
@@ -25,7 +27,7 @@ const { headings } = await post.render(post);
       </div>
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>
-      <section class="post my-8 w-full max-w-[752px] px-8">
+      <section class="my-8 w-full px-4 md:px-8 lg:max-w-[752px]">
         <slot />
       </section>
     </div>

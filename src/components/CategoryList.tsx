@@ -40,7 +40,10 @@ const CategoryList = ({ category, slug, posts }: Props) => {
         />
       </Button>
       {isOpen && (
-        <div id="list" class="ml-2 flex flex-col">
+        <div
+          id="list"
+          class="ml-2 flex flex-col border-l px-2 dark:border-zinc-700"
+        >
           {posts.map((post: any) => (
             <Link
               href={`/blog/${category}/${post.slug}`}

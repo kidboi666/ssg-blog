@@ -3,7 +3,7 @@ import CategoryNavigation from "@components/CategoryNavigation.astro";
 import Header from "@components/Header.astro";
 import "../../public/styles/font.css";
 import "../../public/styles/variables.css";
-import "../../public/styles/typography.css";
+import "../../public/styles/code.css";
 import "@fontsource/pretendard/400.css";
 import "@fontsource/pretendard/500.css";
 import "@fontsource/pretendard/600.css";
@@ -28,10 +28,10 @@ const { title, headings } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="dark:bg-var-main-dark">
     <CategoryNavigation />
     <Header headings={headings} />
-    <main class="dark:bg-var-main-dark animate-fade-in pt-16 md:pl-64">
+    <main class="animate-fade-in pt-[53px] md:pl-64">
       <slot />
     </main>
   </body>

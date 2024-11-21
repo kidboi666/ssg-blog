@@ -14,26 +14,27 @@ interface Props {
   onClick?: () => void;
 }
 
-const button = cva("transition", {
+const button = cva("transition ", {
   variants: {
     intent: {
       primary: [
         "bg-blue-400",
         "text-white",
+        "shadow-sm",
+        "rounded-lg",
         "dark:bg-blue-800",
         "hover:bg-blue-500",
-        "rounded-lg",
       ],
       secondary: [
-        "text-zinc-500",
-        "dark:text-zinc-400",
+        "text-zinc-600",
         "border",
         "border-zinc-400",
-        "dark:border-zinc-600",
-        "hover:text-zinc-800",
-        "hover:bg-zinc-200",
-        "dark:hover:bg-zinc-600",
         "rounded-lg",
+        "shadow-sm",
+        "dark:text-zinc-300",
+        "dark:border-zinc-600",
+        "dark:hover:border-zinc-400",
+        "hover:border-zinc-800",
       ],
       teritory: ["text-zinc-600", "dark:text-zinc-300", "bg-transparent"],
       icon: [

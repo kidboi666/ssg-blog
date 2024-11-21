@@ -8,13 +8,13 @@ pubDate: 2024-04-29
 
 # 기본형
 
-| **종류**      | **타입**      |
+| 종류      | 타입      |
 | ------------- | ------------- |
-| **문자열**    | **string**    |
-| **숫자형**    | **number**    |
-| **불린형**    | **boolean**   |
-| **undefined** | **undefined** |
-| **null**      | **null**      |
+| 문자열    | string    |
+| 숫자형    | number    |
+| 불린형    | boolean   |
+| undefined | undefined |
+| null      | null      |
 
 # 배열과 튜플
 
