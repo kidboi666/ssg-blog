@@ -1,6 +1,6 @@
 ---
-import Button from "./Button.astro";
-import Link from "./Link.astro";
+import Button from "./Button";
+import Link from "./Link";
 import MobileSideNavigation from "./MobileSideNavigation.astro";
 import ThemeButton from "./ThemeButton.astro";
 ---
@@ -9,7 +9,7 @@ import ThemeButton from "./ThemeButton.astro";
   class="dark:bg-var-accent-dark fixed left-0 top-0 z-30 flex h-16 w-full items-center border-b border-zinc-200 bg-zinc-100 px-4 dark:border-zinc-700"
 >
   <div class="flex gap-2">
-    <Link intent="primary" padding="md" href="/">
+    <Link client:only="preact" intent="primary" padding="md" href="/">
       <code>kidboi</code>
     </Link>
     <Button
@@ -20,7 +20,6 @@ import ThemeButton from "./ThemeButton.astro";
       className="md:hidden"
     />
     <Link intent="icon" padding="md" href="/resume" icon="question" />
-    <Link intent="icon" padding="md" href="github.com" icon="github" />
     <ThemeButton />
   </div>
 </header>

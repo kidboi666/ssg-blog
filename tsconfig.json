@@ -7,6 +7,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@constants/*": ["src/constants/*"],
       "@content/*": ["src/content/*"]
-    }
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "preact"
   }
 }

@@ -1,7 +1,9 @@
 ---
 import { getCollection } from "astro:content";
-import CategoryList from "./CategoryList.astro";
 import { categories } from "src/content/config";
+import CategoryList from "./CategoryList";
+
+const { slug } = Astro.params;
 ---
 
 <nav
@@ -12,7 +14,14 @@ import { categories } from "src/content/config";
       categories.map(async (category) => {
         const posts = await getCollection(category);
 
-        return <CategoryList category={category} posts={posts} />;
+        return (
+          <CategoryList
+            client:only="preact"
+            category={category}
+            posts={posts}
+            slug={slug}
+          />
+        );
       })
     }
   </div>

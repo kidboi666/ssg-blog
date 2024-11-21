@@ -1,10 +1,9 @@
----
-import type { ComponentProps } from "react";
-import Icon from "./Icon.astro";
+import type { PropsWithChildren } from "preact/compat";
+import Icon from "./Icon";
 import { cva } from "class-variance-authority";
 import cn from "src/lib/cn";
 
-interface Props extends ComponentProps<"a"> {
+interface Props {
   href?: string;
   intent?: "primary" | "secondary" | "icon";
   icon?: "home" | "category" | "question" | "github";
@@ -50,26 +49,27 @@ const link = cva("transition rounded-lg flex", {
   },
 });
 
-const {
+const Link = ({
   href,
   className,
   size = "md",
   intent = "primary",
   padding,
   icon,
-} = Astro.props;
----
+  children,
+}: PropsWithChildren<Props>) => {
+  return (
+    <a href={href} class={cn(link({ intent, size, padding }), className)}>
+      {intent === "icon" && icon ? (
+        <>
+          <Icon icon={icon} />
+          {children}
+        </>
+      ) : (
+        <p>{children}</p>
+      )}
+    </a>
+  );
+};
 
-<a href={href} class={cn(link({ intent, size, padding }), className)}>
-  {
-    intent === "icon" && icon ? (
-      <Icon icon={icon}>
-        <slot />
-      </Icon>
-    ) : (
-      <p>
-        <slot />
-      </p>
-    )
-  }
-</a>
+export default Link;
