@@ -2,14 +2,15 @@
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 
+type Props = CollectionEntry<"NextJS">;
+
 export async function getStaticPaths() {
   const posts = await getCollection("NextJS");
-  return posts.map((post) => ({
+  return posts.map((post: Props) => ({
     params: { slug: post.slug },
     props: post,
   }));
 }
-type Props = CollectionEntry<"NextJS">;
 
 const post = Astro.props;
 const { Content } = await post.render();
