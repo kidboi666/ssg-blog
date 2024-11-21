@@ -9,6 +9,7 @@ interface Props {
 const ToggleTableOfContents = ({ headings }: Props) => {
   const [isOpen, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const [activeId, setActiveId] = useState<string | null>(null);
 
   const handleOpenCategory = () => {
     setOpen((prev) => !prev);
@@ -22,10 +23,30 @@ const ToggleTableOfContents = ({ headings }: Props) => {
     });
   }, []);
 
+  console.log(activeId);
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveId(entry.target.id); // 현재 보이는 헤딩의 ID를 설정
+        }
+      });
+    });
+
+    // 모든 헤딩 요소를 관찰
+    const headingElements = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+    headingElements.forEach((el) => observer.observe(el));
+
+    return () => {
+      // 컴포넌트 언마운트 시 옵저버 해제
+      headingElements.forEach((el) => observer.unobserve(el));
+    };
+  }, []);
+
   return (
     <aside
       ref={ref}
-      class="sticky top-[53px] z-40 h-fit w-full border-b bg-zinc-100 px-4 py-2 shadow-sm dark:border-zinc-800 dark:bg-var-accent-dark xl:hidden"
+      class="sticky top-[53px] z-40 h-fit w-full overflow-y-auto border-b bg-zinc-100 px-4 py-2 shadow-sm dark:border-zinc-800 dark:bg-var-accent-dark xl:hidden"
     >
       <div class="sticky top-20 w-full xl:h-[calc(100dvh-120px)]">
         <div class="flex h-full flex-col gap-4 overflow-y-scroll scrollbar-none">
@@ -41,21 +62,27 @@ const ToggleTableOfContents = ({ headings }: Props) => {
           >
             목차 보기
           </Button>
-          {isOpen &&
-            headings.map((heading) => (
-              <a href={`#${heading.slug}`} onClick={handleOpenCategory}>
-                <p
-                  class={cn(
-                    "heading text-sm text-zinc-500 hover:text-zinc-200",
-                    heading.depth === 2 && "ml-4",
-                    heading.depth === 3 && "ml-5",
-                    heading.depth === 4 && "ml-7",
-                  )}
-                >
-                  {heading.text}
-                </p>
-              </a>
-            ))}
+          {isOpen && (
+            <ul class="flex h-[calc(100dvh-300px)] flex-col gap-4 overflow-y-auto scrollbar-none">
+              {headings.map((heading) => (
+                <a href={`#${heading.slug}`} onClick={handleOpenCategory}>
+                  <p
+                    class={cn(
+                      "heading text-sm text-zinc-500 transition-all hover:text-zinc-200",
+                      heading.slug === activeId
+                        ? "text-base text-zinc-200"
+                        : "",
+                      heading.depth === 2 && "ml-4",
+                      heading.depth === 3 && "ml-5",
+                      heading.depth === 4 && "ml-7",
+                    )}
+                  >
+                    {heading.text}
+                  </p>
+                </a>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </aside>
