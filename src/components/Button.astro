@@ -11,16 +11,33 @@ interface Props extends ComponentProps<"button"> {
   icon?: "home" | "category" | "question" | "menu" | "cancel" | "sun" | "moon";
   className?: string;
   id?: string;
-  viewBox?: string
+  viewBox?: string;
 }
 
 const button = cva("transition", {
   variants: {
     intent: {
-      primary: ["bg-blue-500", "text-white", "hover:bg-blue-400"],
-      secondary: ["text-zinc-500", "hover:text-zinc-800"],
-      teritory: ["hover:text-zinc-400"],
-      icon: ["hover:bg-blue-500", "hover:text-white", "rounded-lg"],
+      primary: [
+        "bg-blue-400",
+        "text-white",
+        "dark:bg-blue-800",
+        "hover:bg-blue-500",
+      ],
+      secondary: [
+        "text-zinc-500",
+        "dark:text-zinc-400",
+        "hover:text-zinc-800",
+        "hover:bg-zinc-200",
+        "dark:hover:bg-zinc-600",
+      ],
+      teritory: ["text-zinc-600", "dark:text-zinc-300", "bg-transparent"],
+      icon: [
+        "hover:bg-blue-500",
+        "hover:text-white",
+        "dark:text-zinc-400",
+        "dark:hover:text-white",
+        "rounded-lg",
+      ],
     },
     size: {
       sm: ["text-sm"],
@@ -35,7 +52,15 @@ const button = cva("transition", {
   },
 });
 
-const { size, padding, intent = "primary", icon, className, id, viewBox } = Astro.props;
+const {
+  size,
+  padding,
+  intent = "primary",
+  icon,
+  className,
+  id,
+  viewBox,
+} = Astro.props;
 ---
 
 <button

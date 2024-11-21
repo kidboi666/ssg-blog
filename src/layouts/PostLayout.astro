@@ -1,13 +1,13 @@
 ---
 import PostTableOfContents from "@components/PostTableOfContents.astro";
 import Layout from "./Layout.astro";
-import { getEntry, render } from "astro:content";
+import { getEntry } from "astro:content";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
 
 const post = await getEntry(frontmatter.category, slug);
-const { headings } = await render(post);
+const { headings } = await post.render(post);
 ---
 
 <Layout headings={headings}>
@@ -15,12 +15,15 @@ const { headings } = await render(post);
     <PostTableOfContents headings={headings} />
     <div class="'w-full">
       <div class="my-8 w-full max-w-[752px] px-8">
-        <h1 class="text-5xl font-semibold">{frontmatter.title}</h1>
+        <h1 class="text-5xl font-semibold text-zinc-700 dark:text-zinc-200">
+          {frontmatter.title}
+        </h1>
         <p class="ml-px mt-2 text-sm text-zinc-500">
           등록일 : {new Date(frontmatter.pubDate).toLocaleDateString()}
         </p>
       </div>
-      <div class="mt-8 w-full border-b"></div>
+      <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
+      </div>
       <section class="post my-8 w-full max-w-[752px] px-8">
         <slot />
       </section>

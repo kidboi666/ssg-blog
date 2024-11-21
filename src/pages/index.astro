@@ -4,17 +4,21 @@ import Layout from "@layouts/Layout.astro";
 
 <Layout>
   <div
-    class="relative flex h-[calc(100dvh-80px)] flex-col items-center justify-center p-12"
+    class="relative flex h-[calc(100dvh-64px)] flex-col items-center justify-center p-12"
   >
-    <div class="flex size-full max-w-[752px] flex-col justify-center gap-4">
+    <div
+      class="flex size-full max-w-[752px] flex-col justify-center gap-4 text-zinc-800 dark:text-zinc-200"
+    >
       <h1 class="text-7xl">안녕하세요!</h1>
       <h3 class="text-2xl">이곳은 저의 기술블로그 입니다.</h3>
     </div>
     <div class="absolute bottom-0 left-0">
-      <div class="h-80 w-10 rounded-full bg-blue-400 blur-[100px]"></div>
+      <div class="size-40 animate-pulse rounded-full bg-blue-400 blur-[120px]">
+      </div>
     </div>
     <div class="absolute right-0 top-0">
-      <div class="h-80 w-10 rounded-full bg-blue-400 blur-[100px]"></div>
+      <div class="size-40 animate-pulse rounded-full bg-red-400 blur-[140px]">
+      </div>
     </div>
   </div>
 </Layout>

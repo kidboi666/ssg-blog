@@ -1,4 +1,4 @@
-import defaultTheme from 'tailwindcss/defaultTheme'
+import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 
@@ -16,11 +16,16 @@ const pluginContainer = ({ addUtilities }) => {
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "selector",
+  darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        "var-main-dark": "#13151a",
+        "var-accent-dark": "#23262d",
+      },
       fontFamily: {
-        sans: ['Pretendard', ...defaultTheme.fontFamily.sans]
+        sans: ["Pretendard", ...defaultTheme.fontFamily.sans],
+        mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
       },
       keyframes: {
         "fade-in": {
