@@ -8,9 +8,10 @@ interface Props extends ComponentProps<"button"> {
   intent?: "primary" | "secondary" | "icon" | "teritory";
   padding?: "sm" | "md" | "lg";
   size?: "sm" | "md" | "lg";
-  icon?: "home" | "category" | "question" | "menu" | "cancel";
+  icon?: "home" | "category" | "question" | "menu" | "cancel" | "sun" | "moon";
   className?: string;
   id?: string;
+  viewBox?: string
 }
 
 const button = cva("transition", {
@@ -34,7 +35,7 @@ const button = cva("transition", {
   },
 });
 
-const { size, padding, intent = "primary", icon, className, id } = Astro.props;
+const { size, padding, intent = "primary", icon, className, id, viewBox } = Astro.props;
 ---
 
 <button
@@ -43,7 +44,7 @@ const { size, padding, intent = "primary", icon, className, id } = Astro.props;
 >
   {
     intent === "icon" && icon ? (
-      <Icon icon={icon}>
+      <Icon icon={icon} viewBox={viewBox}>
         <slot />
       </Icon>
     ) : (

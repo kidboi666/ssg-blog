@@ -1,3 +1,5 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
 /** @type {import('tailwindcss').Config} */
 
 const pluginContainer = ({ addUtilities }) => {
@@ -17,6 +19,9 @@ export default {
   darkMode: "selector",
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Pretendard', ...defaultTheme.fontFamily.sans]
+      },
       keyframes: {
         "fade-in": {
           from: { opacity: "0", transform: "translateY(8px)" },

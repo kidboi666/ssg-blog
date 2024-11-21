@@ -2,6 +2,7 @@
 import Button from "./Button.astro";
 import Link from "./Link.astro";
 import MobileSideNavigation from "./MobileSideNavigation.astro";
+import ThemeButton from "./ThemeButton.astro";
 ---
 
 <header
@@ -19,7 +20,8 @@ import MobileSideNavigation from "./MobileSideNavigation.astro";
       className="md:hidden"
     />
     <Link intent="icon" padding="md" href="/resume" icon="question" />
-    <!-- <ThemeButton /> -->
+    <Link intent="icon" padding="md" href="github.com" icon="github" />
+    <ThemeButton />
   </div>
 </header>
 <div id="sidebar" class="-translate-x-full transition-all">
