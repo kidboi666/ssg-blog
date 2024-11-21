@@ -6,7 +6,7 @@ import { getEntry } from "astro:content";
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
 
-const post = await getEntry(frontmatter.category, slug);
+const post: any = await getEntry(frontmatter.category, slug);
 const { headings } = await post.render(post);
 ---
 
