@@ -10,6 +10,8 @@ interface Props {
   size?: "sm" | "md" | "lg";
   padding?: "sm" | "md" | "lg";
   className?: string;
+  viewBox?: string;
+  fill?: string;
 }
 
 const link = cva("transition rounded-lg flex", {
@@ -33,7 +35,6 @@ const link = cva("transition rounded-lg flex", {
         "hover:text-white",
         "dark:text-zinc-400",
         "dark:hover:text-white",
-        "rounded-lg",
       ],
     },
     size: {
@@ -56,13 +57,18 @@ const Link = ({
   intent = "primary",
   padding,
   icon,
+  fill,
+  viewBox,
   children,
 }: PropsWithChildren<Props>) => {
   return (
-    <a href={href} class={cn(link({ intent, size, padding }), className)}>
+    <a
+      href={href}
+      class={cn("active:scale-90", link({ intent, size, padding }), className)}
+    >
       {intent === "icon" && icon ? (
         <>
-          <Icon icon={icon} />
+          <Icon icon={icon} fill={fill} viewBox={viewBox} />
           {children}
         </>
       ) : (

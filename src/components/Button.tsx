@@ -14,14 +14,13 @@ interface Props {
   onClick?: () => void;
 }
 
-const button = cva("transition ", {
+const button = cva("transition rounded-lg", {
   variants: {
     intent: {
       primary: [
         "bg-blue-400",
         "text-white",
         "shadow-sm",
-        "rounded-lg",
         "dark:bg-blue-800",
         "hover:bg-blue-500",
       ],
@@ -29,7 +28,6 @@ const button = cva("transition ", {
         "text-zinc-600",
         "border",
         "border-zinc-400",
-        "rounded-lg",
         "shadow-sm",
         "dark:text-zinc-300",
         "dark:border-zinc-600",
@@ -42,7 +40,6 @@ const button = cva("transition ", {
         "hover:text-white",
         "dark:text-zinc-400",
         "dark:hover:text-white",
-        "rounded-lg",
       ],
     },
     size: {

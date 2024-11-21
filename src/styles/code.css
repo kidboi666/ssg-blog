@@ -2,10 +2,6 @@
   @apply mb-[1em] mt-[1em] w-full rounded-2xl;
 }
 
-/* .post code {
-  @apply rounded-lg border border-blue-400 bg-blue-400 px-1.5 py-0 font-mono text-xs text-white dark:border-blue-800 dark:bg-blue-800 dark:text-zinc-100;
-} */
-
 .post .flowchart {
   @apply m-auto;
 }
@@ -20,4 +16,14 @@
 
 .post table {
   @apply w-full overflow-x-auto;
+}
+
+html {
+  visibility: hidden;
+}
+html.dark {
+  visibility: visible; /* 다크 모드 설정 후 보이도록 */
+}
+html.light {
+  visibility: visible; /* 라이트 모드 설정 후 보이도록 */
 }

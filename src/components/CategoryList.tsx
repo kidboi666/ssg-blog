@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useLayoutEffect, useState } from "preact/hooks";
 import cn from "src/lib/cn";
 import Button from "./Button";
 import Icon from "./Icon";
@@ -18,7 +18,7 @@ const CategoryList = ({ category, slug, posts }: Props) => {
     sessionStorage.setItem(`category-${category}`, String(!isOpen));
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const isOpen = sessionStorage.getItem(`category-${category}`) === "true";
     if (isOpen) {
       setOpen(true);
