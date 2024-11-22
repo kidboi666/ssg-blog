@@ -8,9 +8,9 @@ pubDate: 2024-11-22
 
 # 개요
 
-> 이 포스트는 현재 보고 계신 이 블로그에 깃허브 이슈를 연동해 댓글 기능을 구현하는 내용을 담고 있습니다. 또한 많은 부분이 vitaneri 블로거의 내용을 참조하고 있습니다.
+> 이 포스트는 현재 보고 계신 블로그에 깃허브 이슈를 연동해 댓글 기능을 구현하는 내용을 담고 있습니다. 또한 많은 부분이 vitaneri 블로거의 내용을 참조하고 있습니다.
 
-보통 Github Pages나 여타 다른 블로그를 직접 구축할때 댓글 기능은 Github Issues를 연동해 구현된 라이브러리를 많이 사용합니다. 저 또한 비슷한 라이브러리를 찾아보았고 `disqus` 와 `Utterances`가 우선 순위에 들어왔습니다.
+보통 블로그를 직접 구축할때 댓글 기능은 Github Issues를 연동해 구현된 라이브러리를 많이 사용합니다. 저 또한 비슷한 라이브러리를 찾아보았고 `disqus` 와 `Utterances`가 우선 순위에 들어왔습니다.
 
 결과적으론 연동 방법과 작동 방식이 간편하다고 하는 [Utterances](https://utteranc.es/)를 선택했습니다.
 
@@ -30,9 +30,9 @@ pubDate: 2024-11-22
 Utterances가 로드되면 [Github issue search API](https://docs.github.com/ko/rest/search?apiVersion=2022-11-28#search-issues)를 통해 포스팅의 url과 pathname 혹은 title 정보를 가지고 관련 깃허브 페이지를 찾습니다. 이때 해당 게시물에 이슈가 없다면 [utterances-bot](https://github.com/utterances-bot?tab=overview&from=2023-12-01&to=2023-12-31)가 대신 이슈를 만들어주고 요청한 댓글이 달립니다.
 
 <aside class='warning'>
-⚠️ 해당 봇의 깃허브 페이지를 가면 이제껏 봇이 새 이슈를 대신 만들어주는 모든 이력이 잔디밭에 남아 있고 누구의 레포인지도 볼 수 있습니다.
+⚠️ 해당 봇의 깃허브 페이지를 가면 봇이 자동으로 만들어준 모든 이슈 생성 이력이 잔디밭에 남아 있고 누구의 레포에 남겨진 이슈인지도 볼 수 있습니다.
 
-해킹의 우려까진 모르겠으나 뭔가 프라이빗한 맛은 없을 수 있다는 점 참고하고 사용하시길.
+해킹의 우려까진 모르겠으나 뭔가 프라이빗한 맛은 없다는 점을 인지하고 사용해야 합니다!
 
 </aside>
 
@@ -40,7 +40,7 @@ Utterances가 로드되면 [Github issue search API](https://docs.github.com/ko/
 
 1. 해당 기능을 적용할 저장소는 `public`으로 해야합니다.
 
-- `private`으로 적용하면 댓글을 남이 볼 수 없습니다.
+   - `private`으로 적용하면 댓글을 남이 볼 수 없습니다.
 
 2. [utterances 설치 페이지](https://github.com/apps/utterances)로 가서 설치 합니다.
    ![configure](./images/configure_page.png)
@@ -87,14 +87,13 @@ Astro는 아일랜드를 구축하지 않으면 기본적으로 바닐라 자바
 <script>
   const script = document.createElement("script");
   const container = document.querySelector("#utterances-container");
-  const currentTheme = localStorage.getItem("theme");
-
+  const currentTheme = localStorage.theme;
   Object.entries({
     src: "https://utteranc.es/client.js",
-    repo: "tanerijun/vitaneri-v3",
+    repo: "kidboi666/ssg-blog",
     "issue-term": "pathname",
-    label: "post comments",
-    theme: currentTheme == "light" ? "github-light" : "github-dark",
+    label: "comments",
+    theme: currentTheme === "light" ? "github-light" : "github-dark",
     crossorigin: "anonymous",
   }).forEach(([key, value]) => {
     script.setAttribute(key, value);
@@ -161,22 +160,21 @@ function toggleUtterancesTheme() {
 
 위 코드는 현재 테마 정보를 Utterances IFrame 에 보내고 필요한 테마 값을 응답 받을 수 있는 구문 입니다. 위 함수를 테마를 토글할 때 마다 실행시킨다면 우리가 원하는 결과를 얻을 수 있을겁니다.
 
-
 ```jsx ins={14}
 // ThemeButton.tsx
 const handleThemeChange = () => {
- if (localStorage.theme === "dark") {
-   localStorage.theme = "light";
-   setDark(false);
-   document.documentElement.classList.remove("dark");
-   document.documentElement.classList.add("light");
- } else {
-   localStorage.theme = "dark";
-   setDark(true);
-   document.documentElement.classList.remove("light");
-   document.documentElement.classList.add("dark");
- }
- toggleUtterancesTheme(); 
+  if (localStorage.theme === "dark") {
+    localStorage.theme = "light";
+    setDark(false);
+    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.add("light");
+  } else {
+    localStorage.theme = "dark";
+    setDark(true);
+    document.documentElement.classList.remove("light");
+    document.documentElement.classList.add("dark");
+  }
+  toggleUtterancesTheme();
 };
 ```
 
