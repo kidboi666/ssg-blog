@@ -54,6 +54,7 @@ const CategoryList = ({ category, slug, posts }: Props) => {
               size="sm"
               intent={post.slug === slug ? "primary" : "secondary"}
               padding="md"
+              className="ml-1"
             >
               {post.data.title}
             </Link>
