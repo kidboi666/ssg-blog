@@ -5,10 +5,7 @@ import MobileSideNavigation from "./MobileSideNavigation.astro";
 import ThemeButton from "./ThemeButton";
 ---
 
-<div
-  id="sidebar"
-  class="-translate-x-full transition-transform duration-300 ease-in-out"
->
+<div id="sidebar" class="hidden">
   <MobileSideNavigation />
 </div>
 <header
@@ -43,7 +40,7 @@ import ThemeButton from "./ThemeButton";
     const sidebar = document.querySelector("#sidebar");
 
     button.addEventListener("click", () => {
-      sidebar.classList.toggle("-translate-x-full");
+      sidebar.classList.toggle("hidden");
     });
   </script>
 </header>

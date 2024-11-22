@@ -14,7 +14,7 @@ interface Props {
   fill?: string;
 }
 
-const link = cva("transition rounded-lg flex", {
+const link = cva("transition active:scale-95 rounded-lg flex", {
   variants: {
     intent: {
       primary: [
@@ -62,10 +62,7 @@ const Link = ({
   children,
 }: PropsWithChildren<Props>) => {
   return (
-    <a
-      href={href}
-      class={cn("active:scale-90", link({ intent, size, padding }), className)}
-    >
+    <a href={href} class={cn(link({ intent, size, padding }), className)}>
       {intent === "icon" && icon ? (
         <>
           <Icon icon={icon} fill={fill} viewBox={viewBox} />

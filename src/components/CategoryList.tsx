@@ -16,12 +16,11 @@ const CategoryList = ({ category, slug, posts }: Props) => {
 
   const openCategoryList = () => {
     setOpen((prev) => !prev);
-    sessionStorage.setItem(`category-${category.name}`, String(!isOpen));
+    sessionStorage.setItem(`category-${category}`, String(!isOpen));
   };
 
   useLayoutEffect(() => {
-    const isOpen =
-      sessionStorage.getItem(`category-${category.name}`) === "true";
+    const isOpen = sessionStorage.getItem(`category-${category}`) === "true";
     if (isOpen) {
       setOpen(true);
     }
@@ -35,8 +34,8 @@ const CategoryList = ({ category, slug, posts }: Props) => {
         className="relative z-10 mb-2 flex w-full items-center justify-between text-base"
       >
         <div className="flex gap-2">
-          <CategoryIcon category={category.name} />
-          {category.name}
+          <CategoryIcon category={category} />
+          <code>{category}</code>
         </div>
         <Icon
           id="arrow"
@@ -47,11 +46,11 @@ const CategoryList = ({ category, slug, posts }: Props) => {
       {isOpen && (
         <div
           id="list"
-          class="ml-2 flex flex-col border-l px-2 dark:border-zinc-700"
+          class="ml-3 flex flex-col border-l px-2 dark:border-zinc-700"
         >
           {posts.map((post: any) => (
             <Link
-              href={`/blog/${category.name}/${post.slug}`}
+              href={`/blog/${category}/${post.slug}`}
               size="sm"
               intent={post.slug === slug ? "primary" : "secondary"}
               padding="md"

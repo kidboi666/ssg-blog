@@ -32,7 +32,7 @@ const TableOfContents = ({ headings }: Props) => {
     };
   }, []);
   return (
-    <aside class="w-64 border-b border-l border-zinc-200 p-5 dark:border-zinc-800 max-xl:hidden">
+    <aside class="w-64 border-l border-zinc-200 p-5 dark:border-zinc-800 max-xl:hidden">
       <div class="sticky top-20 w-full xl:h-[calc(100dvh-120px)]">
         <div class="flex h-full flex-col gap-2 overflow-y-scroll scrollbar-none">
           <p class="text-lg dark:text-zinc-400">목차</p>
@@ -43,10 +43,11 @@ const TableOfContents = ({ headings }: Props) => {
                   <p
                     class={cn(
                       "heading text-sm text-zinc-500 transition-all hover:text-zinc-200",
-                      activeObj[heading.slug] ? "text-zinc-200" : "",
-                      heading.depth === 2 && "ml-4",
-                      heading.depth === 3 && "ml-5",
-                      heading.depth === 4 && "ml-7",
+                      activeObj[heading.slug] ? "text-blue-500" : "",
+                      heading.depth === 2 && "ml-[1em]",
+                      heading.depth === 3 && "ml-[2em]",
+                      heading.depth === 4 && "ml-[3em]",
+                      heading.depth === 5 && "ml-[4em]",
                     )}
                   >
                     {heading.text}

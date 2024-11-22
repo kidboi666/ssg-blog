@@ -12,7 +12,7 @@ const { slug } = Astro.params;
   <div class="flex flex-col gap-2">
     {
       categories.map(async (category) => {
-        const posts = await getCollection(category.name);
+        const posts = await getCollection(category);
 
         return (
           <CategoryList

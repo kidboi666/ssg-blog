@@ -14,7 +14,7 @@ interface Props {
   onClick?: () => void;
 }
 
-const button = cva("transition rounded-lg", {
+const button = cva("transition active:scale-95 rounded-lg", {
   variants: {
     intent: {
       primary: [

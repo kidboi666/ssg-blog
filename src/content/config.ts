@@ -1,14 +1,15 @@
 import { defineCollection, z } from "astro:content";
 export const categories = [
-  { name: "HTML", icon: "" },
-  { name: "CSS", icon: "" },
-  { name: "JavaScript", icon: "" },
-  { name: "TypeScript", icon: "" },
-  { name: "React", icon: "" },
-  { name: "NextJS", icon: "" },
-  { name: "Axios", icon: "" },
-  { name: "Web", icon: "" },
-  { name: "Redux", icon: "" },
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "React",
+  "NextJS",
+  "Astro",
+  "Redux",
+  "Axios",
+  "Web",
 ] as const;
 
 const HTML = defineCollection({
@@ -92,6 +93,15 @@ const Redux = defineCollection({
     category: z.string(),
   }),
 });
+const Astro = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
 
 export const collections = {
   HTML,
@@ -102,5 +112,6 @@ export const collections = {
   TypeScript,
   Axios,
   Web,
+  Astro,
   Redux,
 };
