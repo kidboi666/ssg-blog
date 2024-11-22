@@ -15,11 +15,11 @@
 }
 
 .post aside.warning {
-  @apply relative border border-yellow-600 bg-yellow-600/25 dark:border-yellow-700 dark:bg-yellow-600/15 !important;
+  @apply relative border border-yellow-700 bg-yellow-600/15 !important;
 }
 
 .post aside.info {
-  @apply relative border border-blue-600 bg-blue-600/25 dark:border-blue-700 dark:bg-blue-600/15 !important;
+  @apply relative border border-blue-700 bg-blue-600/15 !important;
 }
 
 .post table {
