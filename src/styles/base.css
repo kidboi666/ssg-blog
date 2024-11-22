@@ -1,0 +1,11 @@
+html {
+  visibility: hidden;
+}
+html.dark {
+  visibility: visible; /* 다크 모드 설정 후 보이도록 */
+  color-scheme: dark;
+}
+html.light {
+  visibility: visible; /* 라이트 모드 설정 후 보이도록 */
+  color-scheme: light;
+}

@@ -20,9 +20,17 @@ const ThemeButton = () => {
 
   useLayoutEffect(() => {
     setDark(localStorage.theme === "dark");
-    isDark
-      ? document.documentElement.classList.toggle("dark")
-      : document.documentElement.classList.toggle("light");
+    if (localStorage.theme === undefined) {
+      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        document.documentElement.classList.toggle("dark");
+      } else {
+        document.documentElement.classList.toggle("light");
+      }
+    } else {
+      isDark
+        ? document.documentElement.classList.toggle("dark")
+        : document.documentElement.classList.toggle("light");
+    }
   }, []);
 
   return (
