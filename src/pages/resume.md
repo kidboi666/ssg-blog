@@ -14,13 +14,13 @@ author: "이진욱"
 
 <aside>
 
-**HP :** 010-9383-4485
+HP : 010-9383-4485
 
-**이메일 :** sleepnowinthefire66@gmail.com
+이메일 : sleepnowinthefire66@gmail.com
 
-**깃허브** : https://github.com/kidboi666
+깃허브 : https://github.com/kidboi666
 
-**블로그 :** [https://my-blog-eight-rose.vercel.app](https://my-blog-eight-rose.vercel.app/)
+블로그 : [https://my-blog-eight-rose.vercel.app](https://my-blog-eight-rose.vercel.app/)
 
 </aside>
 
@@ -56,7 +56,7 @@ author: "이진욱"
 
 → 1월 1일의 요일 값을 구하고, 일요일에서 떨어진 만큼 빈 블럭을 채워 잔디밭의 정확한 시작 위치 설정
 
-![스크린샷 2024-10-25 오전 9.40.25.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d14ae293-80d7-439d-893d-d6915e995674/491b50b4-7428-4bba-9727-58d67502016e/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-25_%E1%84%8B%E1%85%A9%E1%84%8C%E1%85%A5%E1%86%AB_9.40.25.png)
+![스크린샷 2024-10-25 오전 9.40.25.png](../assets/resume-images/garden.png)
 
 </aside>
 
@@ -66,7 +66,7 @@ author: "이진욱"
 
 → db에 단어 사전과 같은 테이블을 만들고, 해당 db 정보를 통해 사용 횟수 2회를 넘긴 단어들만 순서대로 화면에 출력하는 식으로 구현
 
-![스크린샷 2024-10-23 오후 1.04.06.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/d14ae293-80d7-439d-893d-d6915e995674/69e760c2-3c06-4e53-bcd5-8c12bd0328bf/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2024-10-23_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.04.06.png)
+![스크린샷 2024-10-23 오후 1.04.06.png](../assets/resume-images/summary.png)
 
 </aside>
 
@@ -77,9 +77,9 @@ author: "이진욱"
 
 </aside>
 
-![화면 기록 2024-10-23 오후 1.10.47.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/d14ae293-80d7-439d-893d-d6915e995674/6b3fa48f-8f17-4e6c-a56c-5ab038592811/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8_2024-10-23_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.10.47.gif)
-
-![화면 기록 2024-10-23 오후 1.09.16.gif](https://prod-files-secure.s3.us-west-2.amazonaws.com/d14ae293-80d7-439d-893d-d6915e995674/7bf43407-b383-415b-ac11-4c0485625d46/%E1%84%92%E1%85%AA%E1%84%86%E1%85%A7%E1%86%AB_%E1%84%80%E1%85%B5%E1%84%85%E1%85%A9%E1%86%A8_2024-10-23_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_1.09.16.gif)
+| 툴팁 애니메이션                                                                             | 툴팁 애니메이션2                                                                             |
+| ------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| ![화면 기록 2024-10-23 오후 1.10.47.gif](../assets/resume-images/on-transition.gif) | ![화면 기록 2024-10-23 오후 1.09.16.gif](../assets/resume-images/on-transition2.gif) |
 
 ---
 
