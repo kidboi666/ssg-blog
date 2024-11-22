@@ -31,7 +31,9 @@ const { headings } = await post.render(post);
       >
         <slot />
       </section>
-      <Utterances />
+      <div class="my-8 w-full px-4 md:px-8 xl:max-w-[752px]">
+        <Utterances />
+      </div>
     </div>
     <TableOfContents client:only="preact" headings={headings} />
   </div>

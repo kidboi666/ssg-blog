@@ -4,6 +4,26 @@ import Button from "./Button";
 const ThemeButton = () => {
   const [isDark, setDark] = useState(localStorage.theme === "dark");
 
+  /**
+   * 깃허브의 댓글 테마도 다크모드 토글시 변경해주는 함수
+   */
+  const toggleUtterancesTheme = () => {
+    if (document.querySelector(".utterances-frame")) {
+      const theme =
+        localStorage.getItem("theme") === "light"
+          ? "github-light"
+          : "github-dark";
+      const message = {
+        type: "set-theme",
+        theme,
+      };
+      const iframe = document.querySelector(
+        ".utterances-frame",
+      ) as HTMLIFrameElement; // omit as HTMLIFrameElement if you're wring JS
+      iframe?.contentWindow?.postMessage(message, "https://utteranc.es");
+    }
+  };
+
   const handleThemeChange = () => {
     if (localStorage.theme === "dark") {
       localStorage.theme = "light";
@@ -16,6 +36,7 @@ const ThemeButton = () => {
       document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
     }
+    toggleUtterancesTheme();
   };
 
   useLayoutEffect(() => {

@@ -1,14 +1,14 @@
 import { defineCollection, z } from "astro:content";
 export const categories = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "NextJS",
-  "Axios",
-  "Web",
-  "Redux",
+  { name: "HTML", icon: "" },
+  { name: "CSS", icon: "" },
+  { name: "JavaScript", icon: "" },
+  { name: "TypeScript", icon: "" },
+  { name: "React", icon: "" },
+  { name: "NextJS", icon: "" },
+  { name: "Axios", icon: "" },
+  { name: "Web", icon: "" },
+  { name: "Redux", icon: "" },
 ] as const;
 
 const HTML = defineCollection({
