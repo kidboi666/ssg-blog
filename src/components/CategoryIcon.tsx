@@ -14,7 +14,7 @@ const categoryIcons = {
   Web: "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1590043914/noticon/xe5nasyjil6mn6vk8c4s.png",
   Redux:
     "https://noticon-static.tammolo.com/dgggcrkxq/image/upload/v1567749614/noticon/zgdaxpaif5ojeduonygb.png",
-  Astro: "../../public/icons/astro.svg",
+  Astro: "../assets/icons/astro.svg",
 };
 
 interface Props {
