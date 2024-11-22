@@ -12,12 +12,6 @@ export default defineConfig({
     tailwind(),
     astroExpressiveCode({
       themes: ["one-dark-pro"],
-      styleOverrides: {
-        textMarkers: {
-          delDiffIndicatorContent: "",
-          insDiffIndicatorContent: "",
-        },
-      },
     }),
     preact({ include: ["**/preact/*"] }),
   ],
