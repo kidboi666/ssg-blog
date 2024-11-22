@@ -1,0 +1,14 @@
+---
+import cn from "src/lib/cn";
+
+const { className, as: Component = "div" } = Astro.props;
+---
+
+<Component
+  class={cn(
+    "post prose prose-zinc max-w-none dark:prose-invert prose-headings:mt-[1em] prose-headings:text-zinc-700 prose-p:text-zinc-600 prose-strong:text-zinc-700 prose-code:bg-zinc-200 prose-code:font-normal prose-code:text-zinc-500 prose-li:text-zinc-700 dark:prose-headings:text-zinc-200 dark:prose-p:text-zinc-400 dark:prose-strong:text-zinc-200 dark:prose-code:bg-zinc-700 dark:prose-code:text-zinc-300 dark:prose-li:text-zinc-400",
+    className,
+  )}
+>
+  <slot />
+</Component>

@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: 순수한 컴포넌트
-tags: []
+tags: ["React", "순수 함수", "Pure-Component"]
 pubDate: 2024-11-22
 category: React
 ---

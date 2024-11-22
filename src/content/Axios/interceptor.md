@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "인터셉터 활용법"
 pubDate: 2024-05-18
 category: "Axios"
-tags: []
+tags: ["Axios", "interceptor"]
 ---
 
 # 🔴 반복된 코드가 존재한다.

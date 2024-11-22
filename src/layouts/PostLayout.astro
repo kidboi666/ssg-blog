@@ -6,6 +6,7 @@ import { getEntry } from "astro:content";
 import Utterances from "@components/Utterances.astro";
 import { formatDateElapsed, formatDateToMDY } from "src/utils/formatDate";
 import Tags from "@components/Tags";
+import ProseWrapper from "@components/ProseWrapper.astro";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
@@ -31,12 +32,12 @@ const { headings } = await post.render(post);
       </div>
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>
-
-      <article
-        class="post prose prose-zinc my-8 w-full max-w-none px-4 dark:prose-invert prose-headings:mt-[1em] prose-headings:text-zinc-700 prose-p:text-zinc-600 prose-strong:text-zinc-700 prose-code:bg-zinc-200 prose-code:font-normal prose-code:text-zinc-500 dark:prose-headings:text-zinc-200 dark:prose-p:text-zinc-400 dark:prose-strong:text-zinc-200 dark:prose-code:bg-zinc-700 dark:prose-code:text-zinc-300 md:px-8 xl:max-w-[752px]"
+      <ProseWrapper
+        as="article"
+        className="my-8 w-full px-4 md:px-8 xl:max-w-[752px]"
       >
         <slot />
-      </article>
+      </ProseWrapper>
 
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>

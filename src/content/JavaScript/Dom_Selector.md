@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: Dom Selector
 pubDate: 2024-02-26
-tags: []
+tags: ["JavaScript", "DOM", "Selector"]
 category: JavaScript
 ---
 

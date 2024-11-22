@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: Interactive JavaScript
-tags: []
+tags: ["JavaScript", "DOM", "Summary"]
 pubDate: 2024-03-01
 category: JavaScript
 ---

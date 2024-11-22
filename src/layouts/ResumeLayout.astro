@@ -1,11 +1,10 @@
 ---
+import ProseWrapper from "@components/ProseWrapper.astro";
 import Layout from "./Layout.astro";
 ---
 
 <Layout>
-  <div
-    class="post prose prose-zinc dark:prose-invert prose-headings:text-zinc-700 dark:prose-headings:text-zinc-200 dark:prose-strong:text-zinc-200 prose-strong:text-zinc-700 prose-p:text-zinc-600 dark:prose-code:bg-zinc-600 prose-code:bg-zinc-300 dark:prose-p:text-zinc-400 prose-headings:mt-[1em] m-auto max-w-[752px] p-4 md:p-8"
-  >
+  <ProseWrapper className="m-auto max-w-[752px] p-4 md:p-8">
     <slot />
-  </div>
+  </ProseWrapper>
 </Layout>

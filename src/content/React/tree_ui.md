@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: 트리로서 UI 이해하기
-tags: []
+tags: ["React", "Tree"]
 pubDate: 2024-11-22
 category: React
 ---

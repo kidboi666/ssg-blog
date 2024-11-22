@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: 프리렌더링
-tags: []
+tags: ["Next.js", "Pre-Render", "SSR", "CSR", "SSG"]
 pubDate: 2024-05-10
 category: NextJS
 ---

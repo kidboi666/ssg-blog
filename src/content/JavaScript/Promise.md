@@ -1,7 +1,7 @@
 ---
 layout: "../../layouts/PostLayout.astro"
 title: Promise
-tags: []
+tags: ["JavaScript", "Promise", "Async"]
 pubDate: 2024-03-07
 category: JavaScript
 ---

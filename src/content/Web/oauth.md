@@ -1,8 +1,8 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: Oauth
+title: OAuth
 pubDate: 2024-05-21
-tags: []
+tags: ["OAuth"]
 category: Web
 ---
 

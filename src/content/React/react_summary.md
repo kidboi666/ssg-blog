@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "리액트 요약"
 category: "React"
 pubDate: 2024-11-17
-tags: ["React"]
+tags: ["React", "Summary"]
 ---
 
 # JSX 문법
