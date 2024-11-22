@@ -4,6 +4,7 @@ import ToggleTableOfContents from "@components/ToggleTableOfContents";
 import Layout from "./Layout.astro";
 import { getEntry } from "astro:content";
 import Utterances from "@components/Utterances.astro";
+import { formatDateElapsed, formatDateToMDY } from "src/utils/formatDate";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
@@ -21,7 +22,9 @@ const { headings } = await post.render(post);
           {frontmatter.title}
         </p>
         <p class="ml-px mt-2 text-sm text-zinc-500">
-          등록일 : {new Date(frontmatter.pubDate).toLocaleDateString()}
+          {formatDateToMDY(frontmatter.pubDate)} · {
+            formatDateElapsed(frontmatter.pubDate)
+          }
         </p>
       </div>
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
