@@ -2,7 +2,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 /** @type {import('tailwindcss').Config} */
 
-const pluginContainer = ({ addUtilities }) => {
+const pluginContainer = ({ addUtilities, addVariant }) => {
   addUtilities({
     ".scrollbar-none": {
       "-ms-overflow-style": "none", // IE and Edge
@@ -12,6 +12,10 @@ const pluginContainer = ({ addUtilities }) => {
       },
     },
   });
+  addVariant(
+    "prose-inline-code",
+    '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
+  );
 };
 
 export default {
@@ -38,5 +42,5 @@ export default {
       },
     },
   },
-  plugins: [pluginContainer, require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), pluginContainer],
 };

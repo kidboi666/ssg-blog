@@ -48,8 +48,8 @@ const ToggleTableOfContents = ({ headings }: Props) => {
       ref={ref}
       class="sticky top-[53px] z-40 h-fit w-full overflow-y-auto border-b bg-zinc-100 px-4 py-2 shadow-sm dark:border-zinc-800 dark:bg-var-accent-dark xl:hidden"
     >
-      <div class="sticky top-20 w-full xl:h-[calc(100dvh-120px)]">
-        <div class="flex h-full flex-col gap-4 overflow-y-scroll scrollbar-none">
+      <div class="sticky top-20 h-fit w-full">
+        <div class="flex flex-col gap-4 overflow-y-auto">
           <Button
             onClick={handleOpenCategory}
             intent="secondary"
@@ -63,7 +63,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
             목차 보기
           </Button>
           {isOpen && (
-            <ul class="flex h-[calc(100dvh-300px)] flex-col gap-4 overflow-y-auto scrollbar-none">
+            <ul class="flex max-h-[calc(100dvh-300px)] flex-col gap-4 overflow-y-auto">
               {headings.map((heading) => (
                 <a href={`#${heading.slug}`} onClick={handleOpenCategory}>
                   <p

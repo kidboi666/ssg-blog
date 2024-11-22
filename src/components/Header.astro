@@ -12,7 +12,7 @@ import ThemeButton from "./ThemeButton";
   <MobileSideNavigation />
 </div>
 <header
-  class="dark:bg-var-accent-dark fixed left-0 top-0 z-30 flex w-full items-center border-b border-zinc-200 bg-zinc-100 px-4 py-2 dark:border-zinc-900"
+  class="fixed left-0 top-0 z-30 flex w-full items-center border-b border-zinc-200 bg-zinc-100 px-4 py-2 dark:border-zinc-900 dark:bg-var-accent-dark"
 >
   <div class="flex w-full justify-between gap-2">
     <div class="flex gap-2">
@@ -25,6 +25,8 @@ import ThemeButton from "./ThemeButton";
       />
       <Link intent="icon" padding="md" href="/" icon="home" />
       <Link intent="icon" padding="md" href="/resume" icon="question" />
+    </div>
+    <div class="flex gap-2">
       <Link
         intent="icon"
         padding="md"
@@ -32,16 +34,16 @@ import ThemeButton from "./ThemeButton";
         viewBox="0 0 18 18"
         icon="github"
       />
+      <ThemeButton client:only="preact" />
     </div>
-    <ThemeButton client:only="preact" />
   </div>
+
+  <script is:inline>
+    const button = document.querySelector("#sidebar-button");
+    const sidebar = document.querySelector("#sidebar");
+
+    button.addEventListener("click", () => {
+      sidebar.classList.toggle("-translate-x-full");
+    });
+  </script>
 </header>
-
-<script is:inline>
-  const button = document.querySelector("#sidebar-button");
-  const sidebar = document.querySelector("#sidebar");
-
-  button.addEventListener("click", () => {
-    sidebar.classList.toggle("-translate-x-full");
-  });
-</script>
