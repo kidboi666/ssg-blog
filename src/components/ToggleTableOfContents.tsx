@@ -23,7 +23,6 @@ const ToggleTableOfContents = ({ headings }: Props) => {
     });
   }, []);
 
-  console.log(activeId);
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
@@ -56,7 +55,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
             padding="md"
             size="xs"
             className={cn(
-              "w-fit",
+              "w-fit bg-white dark:bg-var-main-dark",
               isOpen ? "border-blue-400 dark:border-blue-700" : "",
             )}
           >
