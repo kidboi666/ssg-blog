@@ -10,6 +10,7 @@ export const categories = [
   "Redux",
   "Axios",
   "Web",
+  "Java",
 ] as const;
 
 const HTML = defineCollection({
@@ -102,6 +103,15 @@ const Astro = defineCollection({
     category: z.string(),
   }),
 });
+const Java = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
 
 export const collections = {
   HTML,
@@ -114,4 +124,5 @@ export const collections = {
   Web,
   Astro,
   Redux,
+  Java,
 };

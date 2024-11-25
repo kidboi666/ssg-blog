@@ -7,6 +7,7 @@ import React from "../assets/icons/react.png";
 import NextJS from "../assets/icons/next.svg";
 import Axios from "../assets/icons/axios.png";
 import Web from "../assets/icons/web.png";
+import Java from "../assets/icons/java.png";
 
 interface Props {
   category: keyof typeof categoryIcons;
@@ -22,6 +23,7 @@ const categoryIcons = {
   NextJS,
   Axios,
   Web,
+  Java,
 };
 
 const CategoryIcon = ({ category }: Props) => {
