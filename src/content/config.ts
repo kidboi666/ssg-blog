@@ -11,6 +11,7 @@ export const categories = [
   "Axios",
   "Web",
   "Java",
+  "Spring",
 ] as const;
 
 const HTML = defineCollection({
@@ -112,6 +113,15 @@ const Java = defineCollection({
     category: z.string(),
   }),
 });
+const Spring = defineCollection({
+  type: "content",
+  schema: z.object({
+    title: z.string(),
+    tags: z.array(z.string()),
+    pubDate: z.date(),
+    category: z.string(),
+  }),
+});
 
 export const collections = {
   HTML,
@@ -125,4 +135,5 @@ export const collections = {
   Astro,
   Redux,
   Java,
+  Spring,
 };

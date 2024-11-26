@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: Stream 메서드
 category: Java
-tags: ["Java", "Method"]
+tags: ["Java", "Stream"]
 pubDate: 2024-11-25
 ---
 

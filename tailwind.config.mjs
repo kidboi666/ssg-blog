@@ -30,9 +30,15 @@ export default {
               color: "#52525b !important",
               fontWeight: "bold",
             },
-            "li > p:first-of-type .dark": {
+            ".dark li > p:first-of-type": {
               color: "#e4e4e7 !important",
               fontWeight: "bold",
+            },
+            "li::marker": {
+              color: "#52525b !important",
+            },
+            ".dark li::marker": {
+              color: "#e4e4e7 !important",
             },
           },
         },
