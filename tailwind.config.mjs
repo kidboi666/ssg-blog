@@ -20,9 +20,23 @@ const pluginContainer = ({ addUtilities, addVariant }) => {
 
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
-  darkMode: "class",
+  darkMode: ["class"],
   theme: {
     extend: {
+      typography: {
+        custom: {
+          css: {
+            "li > p:first-of-type": {
+              color: "#52525b !important",
+              fontWeight: "bold",
+            },
+            "li > p:first-of-type .dark": {
+              color: "#e4e4e7 !important",
+              fontWeight: "bold",
+            },
+          },
+        },
+      },
       colors: {
         "var-main-dark": "#13151a",
         "var-accent-dark": "#23262d",
