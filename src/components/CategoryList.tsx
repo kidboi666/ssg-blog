@@ -31,11 +31,11 @@ const CategoryList = ({ category, slug, posts }: Props) => {
       <Button
         onClick={openCategoryList}
         intent="teritory"
-        className="relative z-10 mb-2 flex w-full items-center justify-between text-base"
+        className="relative z-10 mb-2 flex w-full items-center justify-between"
       >
         <div className="flex gap-2">
           <CategoryIcon category={category} />
-          <code>{category}</code>
+          {category}
         </div>
         <Icon
           id="arrow"

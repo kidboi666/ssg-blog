@@ -35,10 +35,7 @@ export default {
               fontWeight: "bold",
             },
             "li::marker": {
-              color: "#52525b !important",
-            },
-            ".dark li::marker": {
-              color: "#e4e4e7 !important",
+              color: "#3b82f6 !important",
             },
           },
         },
