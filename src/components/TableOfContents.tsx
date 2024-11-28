@@ -11,13 +11,10 @@ const TableOfContents = ({ headings }: Props) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
-      let foundActive = false;
-
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           setActiveObj((prev) => ({ ...prev, [entry.target.id]: true }));
           lastHeading.current = entry.target.id;
-          foundActive = true;
         } else {
           setActiveObj((prev) => ({ ...prev, [entry.target.id]: false }));
         }
