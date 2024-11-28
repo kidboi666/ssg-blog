@@ -30,9 +30,9 @@ const { title, headings } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="dark:bg-var-main-dark">
-    <CategoryNavigation />
     <Header headings={headings} />
-    <main class="animate-fade-in pt-[53px] md:pl-64">
+    <main class="flex animate-fade-in">
+      <CategoryNavigation />
       <slot />
     </main>
   </body>

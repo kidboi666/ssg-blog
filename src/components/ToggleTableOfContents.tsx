@@ -45,7 +45,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
   return (
     <aside
       ref={ref}
-      class="sticky top-[53px] z-40 h-fit w-full overflow-y-auto border-b bg-zinc-100 px-4 py-2 shadow-sm dark:border-zinc-800 dark:bg-var-accent-dark xl:hidden"
+      class="sticky left-0 right-0 top-[68px] z-40 mx-2 h-fit overflow-y-auto rounded-xl border bg-zinc-100/85 px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 max-lg:fixed max-lg:top-14 max-lg:rounded-t-none xl:hidden"
     >
       <div class="sticky top-20 h-fit w-full">
         <div class="flex flex-col gap-4 overflow-y-auto">
@@ -69,7 +69,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
                     class={cn(
                       "heading text-sm text-zinc-500 transition-all hover:text-zinc-200",
                       heading.slug === activeId
-                        ? "text-base text-zinc-200"
+                        ? "text-base text-blue-500"
                         : "",
                       heading.depth === 2 && "ml-4",
                       heading.depth === 3 && "ml-5",

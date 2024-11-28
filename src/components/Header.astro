@@ -9,7 +9,7 @@ import ThemeButton from "./ThemeButton";
   <MobileSideNavigation />
 </div>
 <header
-  class="fixed left-0 top-0 z-30 flex w-full items-center border-b border-zinc-200 bg-zinc-100 px-4 py-2 dark:border-zinc-900 dark:bg-var-accent-dark"
+  class="sticky left-0 top-2 z-30 m-2 items-center rounded-xl border border-zinc-200 bg-zinc-100/85 px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 max-lg:rounded-b-none"
 >
   <div class="flex w-full justify-between gap-2">
     <div class="flex gap-2">
@@ -18,7 +18,7 @@ import ThemeButton from "./ThemeButton";
         intent="icon"
         padding="md"
         icon="menu"
-        className="md:hidden"
+        className="lg:hidden"
       />
       <Link intent="icon" padding="md" href="/" icon="home" />
       <Link intent="icon" padding="md" href="/resume" icon="question" />
