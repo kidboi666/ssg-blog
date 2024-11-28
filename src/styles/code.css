@@ -11,7 +11,7 @@
 }
 
 .post aside {
-  @apply relative mb-[1em] mt-[1em] overflow-hidden rounded-md bg-zinc-200 p-[1em] pl-[1.4em] dark:bg-zinc-800;
+  @apply relative mb-[1em] mt-[1em] overflow-hidden rounded-md bg-zinc-100 p-[1em] pl-[1.4em] dark:bg-var-accent-dark;
 }
 
 .post aside.warning {

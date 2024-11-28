@@ -36,18 +36,17 @@ const TableOfContents = ({ headings }: Props) => {
       <div class="sticky top-20 w-full xl:h-[calc(100dvh-120px)]">
         <div class="flex h-full flex-col gap-2 overflow-y-scroll scrollbar-none">
           <p class="text-lg dark:text-zinc-400">목차</p>
-          <ul class="flex flex-col gap-2">
+          <ul class="flex flex-col">
             {headings.map((heading) => (
               <li key={heading.slug}>
-                <a href={`#${heading.slug}`}>
+                <a href={`#${heading.slug}`} class="flex">
+                  {Array.from({ length: heading.depth - 1 }, () => (
+                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200 dark:border-zinc-800" />
+                  ))}
                   <p
                     class={cn(
-                      "heading text-sm text-zinc-500 transition-all hover:text-zinc-200",
-                      activeObj[heading.slug] ? "text-blue-500" : "",
-                      heading.depth === 2 && "ml-[1em]",
-                      heading.depth === 3 && "ml-[2em]",
-                      heading.depth === 4 && "ml-[3em]",
-                      heading.depth === 5 && "ml-[4em]",
+                      "heading py-1 text-sm text-zinc-500 transition-all hover:text-zinc-200",
+                      activeObj[heading.slug] && "text-blue-600",
                     )}
                   >
                     {heading.text}
@@ -63,14 +62,3 @@ const TableOfContents = ({ headings }: Props) => {
 };
 
 export default TableOfContents;
-// <style>
-//   .heading2 {
-//     margin-left: 16px;
-//   }
-//   .heading3 {
-//     margin-left: 20px;
-//   }
-//   .heading4 {
-//     margin-left: 28px;
-//   }
-// </style>

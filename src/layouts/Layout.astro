@@ -13,10 +13,9 @@ import "@fontsource/pretendard/800.css";
 
 interface Props {
   title?: string;
-  headings?: { depth: number; slug: string; text: string }[];
 }
 
-const { title, headings } = Astro.props;
+const { title } = Astro.props;
 ---
 
 <!doctype html>
@@ -30,7 +29,7 @@ const { title, headings } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="dark:bg-var-main-dark">
-    <Header headings={headings} />
+    <Header />
     <main class="flex animate-fade-in">
       <CategoryNavigation />
       <slot />

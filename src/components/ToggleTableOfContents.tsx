@@ -45,9 +45,9 @@ const ToggleTableOfContents = ({ headings }: Props) => {
   return (
     <aside
       ref={ref}
-      class="sticky left-0 right-0 top-[68px] z-40 mx-2 h-fit overflow-y-auto rounded-xl border bg-zinc-100/85 px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 max-lg:fixed max-lg:top-14 max-lg:rounded-t-none xl:hidden"
+      class="sticky left-0 right-0 top-[68px] z-30 mx-2 h-fit overflow-y-auto rounded-xl border bg-zinc-100/85 px-1.5 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 max-lg:fixed max-lg:top-14 max-lg:rounded-t-none md:px-4 xl:hidden"
     >
-      <div class="sticky top-20 h-fit w-full">
+      <div class="sticky top-20 h-fit">
         <div class="flex flex-col gap-4 overflow-y-auto">
           <Button
             onClick={handleOpenCategory}
@@ -62,18 +62,20 @@ const ToggleTableOfContents = ({ headings }: Props) => {
             목차 보기
           </Button>
           {isOpen && (
-            <ul class="flex max-h-[calc(100dvh-300px)] flex-col gap-4 overflow-y-auto">
+            <ul class="flex max-h-[calc(100dvh-300px)] flex-col overflow-y-auto">
               {headings.map((heading) => (
-                <a href={`#${heading.slug}`} onClick={handleOpenCategory}>
+                <a
+                  href={`#${heading.slug}`}
+                  onClick={handleOpenCategory}
+                  class="flex"
+                >
+                  {Array.from({ length: heading.depth - 1 }, () => (
+                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200 dark:border-zinc-800" />
+                  ))}
                   <p
                     class={cn(
-                      "heading text-sm text-zinc-500 transition-all hover:text-zinc-200",
-                      heading.slug === activeId
-                        ? "text-base text-blue-500"
-                        : "",
-                      heading.depth === 2 && "ml-4",
-                      heading.depth === 3 && "ml-5",
-                      heading.depth === 4 && "ml-7",
+                      "heading py-1 text-sm text-zinc-500 transition-all hover:text-zinc-900 dark:hover:text-zinc-200",
+                      heading.slug === activeId && "text-base text-blue-600",
                     )}
                   >
                     {heading.text}
