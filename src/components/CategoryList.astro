@@ -1,0 +1,79 @@
+---
+import Button from "./Button";
+import Icon from "./Icon";
+import Link from "./Link";
+import CategoryIcon from "./CategoryIcon.astro";
+import { getCollection } from "astro:content";
+
+interface Props {
+  category: any;
+  slug: any;
+}
+
+const { category, slug } = Astro.props;
+const posts = await getCollection(category);
+---
+
+<category-navigation data-category={category}>
+  <Button
+    id={`category-button`}
+    intent="teritory"
+    className="relative z-10 mb-2 flex w-full items-center justify-between"
+  >
+    <div class="flex gap-2">
+      <CategoryIcon category={category} />
+      <span class="pl-3">
+        {category}
+      </span>
+    </div>
+    <Icon id={`arrow`} icon="arrow" className="transition-transform" />
+  </Button>
+  {
+    (
+      <div
+        id={`list`}
+        class="ml-3 flex flex-col border-l pl-5 dark:border-zinc-700"
+      >
+        {posts.map((post: any) => (
+          <Link
+            href={`/blog/${category}/${post.slug}`}
+            size="sm"
+            intent={post.slug === slug ? "primary" : "secondary"}
+            padding="md"
+            className="ml-1 text-nowrap"
+          >
+            {post.data.title}
+          </Link>
+        ))}
+      </div>
+    )
+  }
+</category-navigation>
+
+<script>
+  class CategoryNavigation extends HTMLElement {
+    connectedCallback() {
+      const category = this.dataset.category;
+      const isOpen = sessionStorage.getItem(`category-${category}`) === "true";
+      const arrow = this.querySelector("#arrow");
+      const list = this.querySelector("#list");
+      const categoryButton = this.querySelector("#category-button");
+      console.log(isOpen);
+      if (isOpen) {
+        list?.classList.remove("hidden");
+        arrow?.classList.add("-rotate-90");
+      } else {
+        list?.classList.add("hidden");
+        arrow?.classList.remove("-rotate-90");
+      }
+
+      categoryButton?.addEventListener("click", () => {
+        const currentState = list?.classList.contains("hidden") === true;
+        sessionStorage.setItem(`category-${category}`, String(currentState));
+        arrow?.classList.toggle("-rotate-90");
+        list?.classList.toggle("hidden");
+      });
+    }
+  }
+  customElements.define("category-navigation", CategoryNavigation);
+</script>

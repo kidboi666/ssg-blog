@@ -70,7 +70,7 @@ const Button = ({
   return (
     <button
       onClick={onClick}
-      id={id ? id : "button"}
+      id={id}
       class={cn(button({ intent, size, padding }), className)}
     >
       {intent === "icon" && icon ? (

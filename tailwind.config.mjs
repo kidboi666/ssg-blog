@@ -12,10 +12,6 @@ const pluginContainer = ({ addUtilities, addVariant }) => {
       },
     },
   });
-  addVariant(
-    "prose-inline-code",
-    '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))',
-  );
 };
 
 export default {
@@ -23,23 +19,6 @@ export default {
   darkMode: ["class"],
   theme: {
     extend: {
-      typography: {
-        custom: {
-          css: {
-            "li > p:first-of-type": {
-              color: "#52525b !important",
-              fontWeight: "bold",
-            },
-            ".dark li > p:first-of-type": {
-              color: "#e4e4e7 !important",
-              fontWeight: "bold",
-            },
-            "li::marker": {
-              color: "#3b82f6 !important",
-            },
-          },
-        },
-      },
       colors: {
         "var-main-dark": "#13151a",
         "var-accent-dark": "#23262d",

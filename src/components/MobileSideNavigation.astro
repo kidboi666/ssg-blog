@@ -1,7 +1,6 @@
 ---
-import { getCollection } from "astro:content";
 import Button from "./Button";
-import CategoryList from "./CategoryList";
+import CategoryList from "./CategoryList.astro";
 import { categories } from "@content/config";
 
 const { slug } = Astro.params;
@@ -20,17 +19,8 @@ const { slug } = Astro.params;
     />
     <div class="flex flex-1 flex-col gap-2">
       {
-        categories.map(async (category) => {
-          const posts = await getCollection(category);
-
-          return (
-            <CategoryList
-              client:only="preact"
-              category={category}
-              posts={posts}
-              slug={slug}
-            />
-          );
+        categories.map((category) => {
+          return <CategoryList category={category} slug={slug} />;
         })
       }
     </div>

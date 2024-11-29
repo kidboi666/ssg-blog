@@ -10,6 +10,18 @@
   @apply m-auto;
 }
 
+.post li > p:first-of-type {
+  @apply font-bold text-[#52525b] !important;
+}
+
+.dark .post li > p:first-of-type {
+  @apply font-bold text-[#e4e4e7] !important;
+}
+
+.post li::marker {
+  @apply text-[#3b82f6] !important;
+}
+
 .post pre > code {
   @apply border-0 bg-transparent p-0 dark:bg-transparent;
 }
