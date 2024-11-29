@@ -69,7 +69,7 @@ const Link = ({
           {children}
         </>
       ) : (
-        <p>{children}</p>
+        <>{children}</>
       )}
     </a>
   );

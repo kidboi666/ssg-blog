@@ -16,7 +16,7 @@ const posts = await getCollection(category);
 
 <category-navigation data-category={category}>
   <Button
-    id={`category-button`}
+    id="category-button"
     intent="teritory"
     className="relative z-10 mb-2 flex w-full items-center justify-between"
   >
@@ -26,12 +26,12 @@ const posts = await getCollection(category);
         {category}
       </span>
     </div>
-    <Icon id={`arrow`} icon="arrow" className="transition-transform" />
+    <Icon id="arrow" icon="arrow" className="transition-transform" />
   </Button>
   {
     (
       <div
-        id={`list`}
+        id="list"
         class="ml-3 flex flex-col border-l pl-5 dark:border-zinc-700"
       >
         {posts.map((post: any) => (
@@ -40,7 +40,7 @@ const posts = await getCollection(category);
             size="sm"
             intent={post.slug === slug ? "primary" : "secondary"}
             padding="md"
-            className="ml-1 text-nowrap"
+            className="ml-1 text-nowrap line-clamp-1"
           >
             {post.data.title}
           </Link>
@@ -58,7 +58,7 @@ const posts = await getCollection(category);
       const arrow = this.querySelector("#arrow");
       const list = this.querySelector("#list");
       const categoryButton = this.querySelector("#category-button");
-      console.log(isOpen);
+
       if (isOpen) {
         list?.classList.remove("hidden");
         arrow?.classList.add("-rotate-90");
