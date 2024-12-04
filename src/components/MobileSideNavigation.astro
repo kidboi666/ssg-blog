@@ -7,36 +7,42 @@ const { slug } = Astro.params;
 ---
 
 <nav
-  class="fixed left-0 top-0 z-50 h-dvh w-80 overflow-y-auto border-r border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-var-accent-dark lg:hidden"
+  id="sidebar"
+  class="fixed left-0 top-0 z-50 -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
 >
-  <div class="flex flex-col gap-4">
-    <Button
-      id="close-sidebar-button"
-      intent="icon"
-      padding="md"
-      icon="cancel"
-      className="self-end"
-    />
-    <div class="flex flex-1 flex-col gap-2">
-      {
-        categories.map((category) => {
-          return <CategoryList category={category} slug={slug} />;
-        })
-      }
+  <div
+    class="relative z-50 h-dvh w-80 overflow-y-auto border-r border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-var-accent-dark"
+  >
+    <div class="flex flex-col gap-4">
+      <Button
+        id="close-sidebar-button"
+        intent="icon"
+        padding="md"
+        icon="cancel"
+        className="self-end"
+      />
+      <div class="flex flex-1 flex-col gap-2">
+        {
+          categories.map((category) => {
+            return <CategoryList category={category} slug={slug} />;
+          })
+        }
+      </div>
     </div>
   </div>
+  <div
+    id="background"
+    class="fixed bottom-0 left-0 right-0 top-0 z-40 size-full bg-black/25 backdrop-blur-sm lg:hidden"
+  >
+  </div>
 </nav>
-<div
-  id="background"
-  class="fixed bottom-0 left-0 right-0 top-0 z-40 size-full bg-black/25 backdrop-blur-sm lg:hidden"
->
-</div>
 
 <script is:inline>
   const closeButton = document.querySelector("#close-sidebar-button");
   const background = document.querySelector("#background");
+  const sidebar = document.querySelector("#sidebar");
 
-  const closeSidebar = () => sidebar.classList.add("hidden");
+  const closeSidebar = () => sidebar.classList.add("-translate-x-full");
 
   closeButton.addEventListener("click", closeSidebar);
   background.addEventListener("click", closeSidebar);

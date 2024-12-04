@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: Java Map 문법
+title: Map 문법
 tags: ["Java", "Map"]
 category: Java
 pubDate: 2024-11-25
