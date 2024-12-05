@@ -42,7 +42,7 @@ const { headings } = await post.render(post);
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>
       <div class="my-8 w-full px-4 lg:max-w-[752px] xl:px-8">
-        <Utterances client:load />
+        <Utterances />
       </div>
     </div>
     <TableOfContents client:only="preact" headings={headings} />
