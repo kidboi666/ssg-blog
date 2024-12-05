@@ -14,6 +14,7 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/preact": "^3.5.3",
     "@astrojs/tailwind": "^5.1.2",
+    "@expressive-code/plugin-line-numbers": "^0.38.3",
     "@fontsource/pretendard": "^5.1.0",
     "astro": "^4.16.12",
     "astro-diagram": "^0.7.0",

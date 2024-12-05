@@ -5,6 +5,7 @@ import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import remarkMermaid from "remark-mermaidjs";
 import { astroExpressiveCode } from "astro-expressive-code";
+import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,6 +13,7 @@ export default defineConfig({
     tailwind(),
     astroExpressiveCode({
       themes: ["one-dark-pro"],
+      plugins: [pluginLineNumbers()],
     }),
     preact({ include: ["**/preact/*"] }),
   ],

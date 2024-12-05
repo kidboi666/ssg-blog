@@ -45,7 +45,7 @@ const MONTHS = [
 export const formatDateToMDY = (date: string | number) => {
   const newDate = new Date(date);
   const year = newDate.getFullYear();
-  const month = newDate.getMonth() + 1;
+  const month = newDate.getMonth();
   const day = newDate.getDate().toString().padStart(2, "0");
 
   return `${MONTHS[month]} ${day}, ${year}`;
