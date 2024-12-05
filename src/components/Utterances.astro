@@ -4,20 +4,22 @@
 
 <div id="utterances-container"></div>
 
-<script is:inline>
-  const script = document.createElement("script");
-  const container = document.querySelector("#utterances-container");
-  const currentTheme = localStorage.theme;
-  Object.entries({
-    src: "https://utteranc.es/client.js",
-    repo: "kidboi666/ssg-blog",
-    "issue-term": "pathname",
-    label: "comments",
-    theme: currentTheme === "light" ? "github-light" : "github-dark",
-    crossorigin: "anonymous",
-  }).forEach(([key, value]) => {
-    script.setAttribute(key, value);
-  });
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const script = document.createElement("script");
+    const container = document.querySelector("#utterances-container");
+    const currentTheme = localStorage.theme;
+    Object.entries({
+      src: "https://utteranc.es/client.js",
+      repo: "kidboi666/ssg-blog",
+      "issue-term": "pathname",
+      label: "comments",
+      theme: currentTheme === "light" ? "github-light" : "github-dark",
+      crossorigin: "anonymous",
+    }).forEach(([key, value]) => {
+      script.setAttribute(key, value);
+    });
 
-  container?.appendChild(script);
+    container?.appendChild(script);
+  });
 </script>

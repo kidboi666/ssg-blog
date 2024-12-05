@@ -2,14 +2,17 @@
 import { categories } from "src/content/config";
 import CategoryList from "./CategoryList.astro";
 
-const { slug } = Astro.params;
+const { slug } = Astro.props;
 ---
 
 <nav
   id="category-navigation"
-  class="fixed left-0 top-[68px] z-30 ml-2 h-[calc(100dvh-76px)] w-[66px] flex-shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all dark:border-zinc-700 dark:bg-var-main-dark max-lg:hidden"
+  class="fixed left-0 top-[68px] z-30 ml-2 h-[calc(100dvh-76px)] w-[66px] flex-shrink-0 overflow-hidden rounded-xl border border-zinc-200 bg-white shadow-sm transition-all duration-300 ease-in-out dark:border-zinc-700 dark:bg-var-main-dark max-lg:hidden"
 >
-  <div id="navigation-wrapper" class="flex h-full w-full flex-col gap-2 p-5">
+  <div
+    id="navigation-wrapper"
+    class="flex h-full w-full flex-col gap-2 overflow-y-auto p-5 scrollbar-none"
+  >
     {
       categories.map((category) => {
         return <CategoryList category={category} slug={slug} />;
@@ -19,18 +22,19 @@ const { slug } = Astro.params;
 </nav>
 
 <script>
-  const navigation = document.querySelector("#category-navigation");
-  const navigationScrollbar = document.querySelector("#navigation-wrapper");
+  document.addEventListener("astro:page-load", () => {
+    const navigation = document.querySelector("#category-navigation");
+    const navigationScrollbar = document.querySelector("#navigation-wrapper");
+    navigation?.addEventListener("mouseenter", () => {
+      navigation.classList.remove("w-[66px]");
+      navigation.classList.add("w-64");
+      navigationScrollbar?.classList.remove("scrollbar-none");
+    });
 
-  navigation?.addEventListener("mouseenter", () => {
-    navigation.classList.remove("w-[66px]");
-    navigation.classList.add("w-64");
-    navigationScrollbar?.classList.add("overflow-y-auto");
-  });
-
-  navigation?.addEventListener("mouseleave", () => {
-    navigation.classList.remove("w-64");
-    navigation.classList.add("w-[66px]");
-    navigationScrollbar?.classList.remove("overflow-y-auto");
+    navigation?.addEventListener("mouseleave", () => {
+      navigation.classList.remove("w-64");
+      navigation.classList.add("w-[66px]");
+      navigationScrollbar?.classList.add("scrollbar-none");
+    });
   });
 </script>

@@ -1,6 +1,6 @@
 import cn from "src/lib/cn";
-import Button from "./Button";
 import { useEffect, useRef, useState } from "preact/hooks";
+import Button from "./Button";
 
 interface Props {
   headings: { depth: number; slug: string; text: string }[];
@@ -45,7 +45,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
   return (
     <aside
       ref={ref}
-      class="sticky left-0 right-0 top-[68px] z-20 mx-2 h-fit overflow-y-auto rounded-xl border bg-zinc-100/85 px-1.5 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 max-lg:fixed max-lg:top-14 max-lg:rounded-t-none md:px-4 xl:hidden"
+      class="dark:bg-var-accent-dark/85md:px-4 fixed left-0 right-0 top-[57px] z-20 mx-2 h-fit overflow-y-auto rounded-xl rounded-t-none border bg-zinc-100/85 px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 lg:ml-[84px] xl:hidden"
     >
       <div class="sticky top-20 h-fit">
         <div class="flex flex-col gap-4 overflow-y-auto">

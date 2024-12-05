@@ -100,7 +100,7 @@ public class LinkedHashMapExample {
 }
 ```
 
-```bash
+```zsh
 { A=Apple, C=Cherry }
 ```
 

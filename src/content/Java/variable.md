@@ -95,7 +95,7 @@ public class CharExample {
 }
 ```
 
-```console
+```zsh
 A
 A
 가
@@ -323,7 +323,7 @@ public class ScannerExample {
 }
 ```
 
-```console
+```zsh
 x 값 입력: 3
 y 값 입력: 5
 x + y: 8

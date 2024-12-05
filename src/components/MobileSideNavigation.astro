@@ -37,13 +37,15 @@ const { slug } = Astro.params;
   </div>
 </nav>
 
-<script is:inline>
-  const closeButton = document.querySelector("#close-sidebar-button");
-  const background = document.querySelector("#background");
-  const sidebar = document.querySelector("#sidebar");
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const closeButton = document.querySelector("#close-sidebar-button");
+    const background = document.querySelector("#background");
+    const sidebar = document.querySelector("#sidebar");
 
-  const closeSidebar = () => sidebar.classList.add("-translate-x-full");
+    const closeSidebar = () => sidebar?.classList.add("-translate-x-full");
 
-  closeButton.addEventListener("click", closeSidebar);
-  background.addEventListener("click", closeSidebar);
+    closeButton?.addEventListener("click", closeSidebar);
+    background?.addEventListener("click", closeSidebar);
+  });
 </script>

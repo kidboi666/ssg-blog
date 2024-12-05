@@ -102,7 +102,7 @@ public class Overloading2 {
 }
 ```
 
-```console
+```zsh
 
 int a, double b
 double a, int b
@@ -135,7 +135,7 @@ public class Overloading3 {
 }
 ```
 
-```console
+```zsh
 
 1번 호출
 1: 3
@@ -156,7 +156,7 @@ public static int add(int a, int b) {
 1. 정수 1, 정수 2를 호출했고 자동 형변환이 발생해서 `add(double a, double b)` 가 호출됩니다.
 2. 실수 1.2, 실수 1.5를 호출했고 `add(double a, double b)` 가 호출됩니다.
 
-```console
+```zsh
 
 2번 호출
 1: 3.0

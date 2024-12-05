@@ -1,5 +1,4 @@
 ---
-import cn from "src/lib/cn";
 import Button from "./Button";
 import Link from "./Link";
 import MobileSideNavigation from "./MobileSideNavigation.astro";
@@ -10,10 +9,10 @@ const isPostLayout = pathname.includes("/blog");
 ---
 
 <header
-  class={cn(
-    "fixed left-0 right-0 top-2 z-30 mx-2 items-center rounded-xl border border-zinc-200 bg-zinc-100/85 px-1.5 md:px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 ",
-    isPostLayout && "max-lg:rounded-b-none",
-  )}
+  class:list={[
+    "fixed left-0 right-0 top-2 z-30 mx-2 items-center rounded-xl border border-zinc-200 bg-zinc-100/85 px-1.5 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 md:px-4",
+    { "max-xl:rounded-br-none max-lg:rounded-b-none": isPostLayout },
+  ]}
 >
   <div class="flex w-full justify-between gap-2">
     <div class="flex gap-2">
@@ -41,10 +40,13 @@ const isPostLayout = pathname.includes("/blog");
 </header>
 <MobileSideNavigation />
 
-<script is:inline>
-  const button = document.querySelector("#sidebar-button");
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const button = document.querySelector("#sidebar-button");
+    const sidebar = document.querySelector("#sidebar");
 
-  button.addEventListener("click", () => {
-    sidebar.classList.toggle("-translate-x-full");
+    button?.addEventListener("click", () => {
+      sidebar!.classList.toggle("-translate-x-full");
+    });
   });
 </script>
