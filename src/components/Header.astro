@@ -10,7 +10,7 @@ const isPostLayout = pathname.includes("/blog");
 
 <header
   class:list={[
-    "fixed left-0 right-0 top-2 z-30 mx-2 items-center rounded-xl border border-zinc-200 bg-zinc-100/85 px-1.5 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 md:px-4",
+    "fixed left-0 right-0 top-2 z-30 mx-2 items-center rounded-xl border border-zinc-200 bg-zinc-50/95 px-1.5 py-1.5 shadow-sm backdrop-blur-sm dark:border-zinc-700 dark:bg-var-accent-dark/95 md:px-4",
     { "max-xl:rounded-br-none max-lg:rounded-b-none": isPostLayout },
   ]}
 >
@@ -46,7 +46,7 @@ const isPostLayout = pathname.includes("/blog");
     const sidebar = document.querySelector("#sidebar");
 
     button?.addEventListener("click", () => {
-      sidebar!.classList.toggle("-translate-x-full");
+      sidebar?.classList.toggle("-translate-x-full");
     });
   });
 </script>

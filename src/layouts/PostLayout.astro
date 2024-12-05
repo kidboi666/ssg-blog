@@ -16,7 +16,7 @@ const { headings } = await post.render(post);
 ---
 
 <Layout>
-  <div class="flex w-full flex-col max-lg:mt-8 xl:flex-row xl:justify-center">
+  <div class="mt-8 flex w-full flex-col xl:flex-row xl:justify-center">
     <ToggleTableOfContents client:only="preact" headings={headings} />
     <div>
       <div class="my-8 flex w-full flex-col px-4 md:px-8 xl:max-w-[752px]">
@@ -42,7 +42,7 @@ const { headings } = await post.render(post);
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>
       <div class="my-8 w-full px-4 lg:max-w-[752px] xl:px-8">
-        <Utterances />
+        <Utterances client:load />
       </div>
     </div>
     <TableOfContents client:only="preact" headings={headings} />

@@ -45,7 +45,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
   return (
     <aside
       ref={ref}
-      class="dark:bg-var-accent-dark/85md:px-4 fixed left-0 right-0 top-[57px] z-20 mx-2 h-fit overflow-y-auto rounded-xl rounded-t-none border bg-zinc-100/85 px-4 py-1.5 shadow-sm backdrop-blur-md dark:border-zinc-700 dark:bg-var-accent-dark/85 lg:ml-[84px] xl:hidden"
+      class="fixed left-0 right-0 top-[57px] z-20 mx-2 h-fit overflow-y-auto rounded-xl rounded-t-none border bg-zinc-50/95 px-4 py-1.5 shadow-sm backdrop-blur-sm dark:border-zinc-700 dark:bg-var-accent-dark/95 md:px-4 lg:ml-[112px] xl:hidden"
     >
       <div class="sticky top-20 h-fit">
         <div class="flex flex-col gap-4 overflow-y-auto">
@@ -70,7 +70,7 @@ const ToggleTableOfContents = ({ headings }: Props) => {
                   class="flex"
                 >
                   {Array.from({ length: heading.depth - 1 }, () => (
-                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200 dark:border-zinc-800" />
+                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200/85 dark:border-zinc-700/45" />
                   ))}
                   <p
                     class={cn(

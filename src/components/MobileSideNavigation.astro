@@ -8,7 +8,7 @@ const { slug } = Astro.params;
 
 <nav
   id="sidebar"
-  class="fixed left-0 top-0 z-50 -translate-x-full transition-transform duration-300 ease-in-out lg:hidden"
+  class="fixed left-0 top-0 z-50 -translate-x-full transition-all duration-300 ease-in-out lg:hidden"
 >
   <div
     class="relative z-50 h-dvh w-80 overflow-y-auto border-r border-zinc-200 bg-white p-5 dark:border-zinc-700 dark:bg-var-accent-dark"
@@ -31,8 +31,8 @@ const { slug } = Astro.params;
     </div>
   </div>
   <div
-    id="background"
-    class="fixed bottom-0 left-0 right-0 top-0 z-40 size-full bg-black/25 backdrop-blur-sm lg:hidden"
+    id="sidebar-background"
+    class="fixed bottom-0 left-0 right-0 top-0 z-40 size-full bg-black/25 backdrop-blur-sm transition-opacity"
   >
   </div>
 </nav>
@@ -40,10 +40,12 @@ const { slug } = Astro.params;
 <script>
   document.addEventListener("astro:page-load", () => {
     const closeButton = document.querySelector("#close-sidebar-button");
-    const background = document.querySelector("#background");
+    const background = document.querySelector("#sidebar-background");
     const sidebar = document.querySelector("#sidebar");
 
-    const closeSidebar = () => sidebar?.classList.add("-translate-x-full");
+    const closeSidebar = () => {
+      sidebar?.classList.add("-translate-x-full");
+    };
 
     closeButton?.addEventListener("click", closeSidebar);
     background?.addEventListener("click", closeSidebar);

@@ -27,12 +27,12 @@ const { slug } = Astro.props;
     const navigationScrollbar = document.querySelector("#navigation-wrapper");
     navigation?.addEventListener("mouseenter", () => {
       navigation.classList.remove("w-[66px]");
-      navigation.classList.add("w-64");
+      navigation.classList.add("w-80");
       navigationScrollbar?.classList.remove("scrollbar-none");
     });
 
     navigation?.addEventListener("mouseleave", () => {
-      navigation.classList.remove("w-64");
+      navigation.classList.remove("w-80");
       navigation.classList.add("w-[66px]");
       navigationScrollbar?.classList.add("scrollbar-none");
     });

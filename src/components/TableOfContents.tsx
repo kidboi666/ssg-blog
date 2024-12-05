@@ -38,7 +38,7 @@ const TableOfContents = ({ headings }: Props) => {
               <li key={heading.slug}>
                 <a href={`#${heading.slug}`} class="flex">
                   {Array.from({ length: heading.depth - 1 }, () => (
-                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200 dark:border-zinc-800" />
+                    <div class="w-[1em] flex-shrink-0 border-l border-zinc-200/45 dark:border-zinc-800/45" />
                   ))}
                   <p
                     class={cn(
