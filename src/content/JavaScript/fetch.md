@@ -22,7 +22,7 @@ pubDate: 2024-12-06
 
   HTTP는 아니지만 HTTP와 함께 사용하도록 만들어진 네트워크 프로토콜 입니다. 웹소켓은 클라이언트와 서버가 TCP 네트워크 소켓과 비슷한 방법으로 메시지를 주고받을 수 있는 비동기 메시지 전송 API입니다.
 
-## fetch()
+## `fetch()`
 
 기본적인 HTTP 요청에서 fetch()는 3단계로 동작합니다.
 
@@ -170,3 +170,7 @@ fetch(url, {
   body: JSON.stringify(requestBody),
 });
 ```
+
+# 참조
+
+- the Definitive Guide (서적)

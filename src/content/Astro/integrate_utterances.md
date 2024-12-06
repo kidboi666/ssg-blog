@@ -30,8 +30,9 @@ pubDate: 2024-11-22
 Utterances가 로드되면 [Github issue search API](https://docs.github.com/ko/rest/search?apiVersion=2022-11-28#search-issues)를 통해 포스팅의 url과 pathname 혹은 title 정보를 가지고 관련 깃허브 페이지를 찾습니다. 이때 해당 게시물에 이슈가 없다면 [utterances-bot](https://github.com/utterances-bot?tab=overview&from=2023-12-01&to=2023-12-31)가 대신 이슈를 만들어주고 요청한 댓글이 달립니다.
 
 <aside class='warning'>
-⚠️ 해당 봇의 깃허브 페이지를 가면 봇이 자동으로 만들어준 모든 이슈 생성 이력이 잔디밭에 남아 있고 누구의 레포에 남겨진 이슈인지도 볼 수 있습니다.
+댓글 기록은 모두 공개됩니다.
 
+해당 봇의 깃허브 페이지를 가면 봇이 자동으로 만들어준 모든 이슈 생성 이력이 잔디밭에 남아 있고 누구의 레포에 남겨진 이슈인지도 볼 수 있습니다.
 해킹의 우려까진 모르겠으나 뭔가 프라이빗한 맛은 없다는 점을 인지하고 사용해야 합니다!
 
 </aside>

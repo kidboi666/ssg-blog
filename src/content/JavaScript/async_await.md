@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: async/await
+title: async와 await
 tags: [JavaScript, Async]
 category: JavaScript
 pubDate: 2024-12-06
@@ -105,6 +105,6 @@ function f(x) {
 
 사실 이런 식으로 문법을 변형해 보는 것만으로는 await 키워드를 설명하기 쉽지 않습니다. 하지만 await키워드를 함수 바디를 동기적 덩어리로 구분하는 일종의 표식이라고 생각해 보십시오. ES2017 인터프리터는 함수 바디를 일련의 하위 함수 여러 개로 분해할 수 있으며 각 하위 함수는 자신의 앞에 있는, await로 표시된 프라미스의 `then()` 메서드에 전달됩니다.
 
-### 참조
+# 참조
 
 - the Definitive Guide (서적)

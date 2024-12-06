@@ -107,7 +107,7 @@ ReactDOM.render(
 ```
 
 <aside class='warning'>
-⚠️ JSX 문법에서 중괄호는 자바스크립트 표현식만 사용 가능합니다.
+JSX 문법에서 중괄호는 자바스크립트 표현식만 사용 가능합니다.
 
 for나 if문 같은 문장은 다룰 수 없습니다.
 
@@ -160,7 +160,7 @@ export default App;
 ```
 
 <aside class='warning'>
-⚠️ 리액트 컴포넌트의 이름은 반드시 첫글자를 대문자로 작성해야 합니다.
+리액트 컴포넌트의 이름은 반드시 첫글자를 대문자로 작성해야 합니다.
 
 컴포넌트의 첫글자가 소문자이면 오류가 발생하니깐 주의해주세요!
 
@@ -222,17 +222,17 @@ const [num, setNum] = useState(1); // useState 함수의 아규먼트는 초기�
 // ...
 ```
 
-1️⃣ useState 함수는 초기값을 아규먼트로 받습니다.
+1. useState 함수는 초기값을 아규먼트로 받습니다.
 
-2️⃣ useState 함수는 실행결과로 2개의 요소를 가진 배열을 반환합니다.
+2. useState 함수는 실행결과로 2개의 요소를 가진 배열을 반환합니다.
 
-3️⃣ 보통은 Destructuring 문법으로 useState을 작성합니다.
+3. 보통은 Destructuring 문법으로 useState을 작성합니다.
 
-4️⃣ 반환된 배열의 첫번째 요소는 state 입니다
+4. 반환된 배열의 첫번째 요소는 state 입니다
 
-5️⃣ 반환된 배열의 두번째 요소는 state를 바꾸는 setter함수 입니다.
+5. 반환된 배열의 두번째 요소는 state를 바꾸는 setter함수 입니다.
 
-6️⃣ setter함수는 보통 state앞에 set을 붙인 카멜케이스로 작성합니다.
+6. setter함수는 보통 state앞에 set을 붙인 카멜케이스로 작성합니다.
 
 # 참조형 state
 
@@ -277,7 +277,7 @@ const handleRollClick = () => {
 
 ## **프로젝트 생성하기**
 
-```
+```zsh showLineNumbers=false
 npm init react-app .
 ```
 
@@ -285,7 +285,7 @@ npm init react-app .
 
 ## **개발 모드 실행하기**
 
-```
+```zsh showLineNumbers=false
 npm start (npm run start)
 ```
 
@@ -293,7 +293,7 @@ npm start (npm run start)
 
 ## **실행 중인 서버 종료하기**
 
-```
+```zsh showLineNumbers=false
 ctrl + c
 ```
 
@@ -301,7 +301,7 @@ ctrl + c
 
 ## **개발된 프로젝트 빌드하기**
 
-```
+```zsh showLineNumbers=false
 npm run build
 ```
 
@@ -309,7 +309,7 @@ npm run build
 
 ## **빌드한 것 로컬에서 실행하기**
 
-```
+```zsh showLineNumbers=false
 npx serve build
 ```
 
@@ -424,9 +424,9 @@ URL.revokeObjectURL(objectURL);
 
 이 Hook은 두 가지 주요 목적을 가지고 있습니다.
 
-1️⃣ 컴포넌트가 렌더링된 후에 어떤 일을 수행해야 하는지 지정합니다.
+1. 컴포넌트가 렌더링된 후에 어떤 일을 수행해야 하는지 지정합니다.
 
-2️⃣ 어떤 값이 변경될 때마다 side effect를 수행해야 하는지 지정합니다.
+2. 어떤 값이 변경될 때마다 side effect를 수행해야 하는지 지정합니다.
 
 기본적으로 `useEffect`에 전달된 함수는 매 렌더링 후에 수행됩니다. 하지만 두 번째 인자로 배열을 전달하여 그 배열 안에 있는 값들이 변화할 때만 side effect를 실행하도록 할 수도 있습니다.
 
@@ -474,6 +474,7 @@ useEffect(() => {
 ```
 
 <aside class='info'>
-👉 `useEffect` 는 리액트 안과 밖의 데이터를 일치시키는 동기화 작업에 활용하면 좋습니다.
+
+`useEffect` 는 리액트 안과 밖의 데이터를 일치시키는 동기화 작업에 활용하면 좋습니다.
 
 </aside>
