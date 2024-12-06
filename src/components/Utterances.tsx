@@ -1,13 +1,15 @@
----
+import { useEffect, useRef } from "preact/hooks";
 
----
+interface Props {
+  slug?: string;
+}
+const Utterances = ({ slug }: Props) => {
+  const ref = useRef<HTMLDivElement>(null);
 
-<div id="utterances-container"></div>
-
-<script>
-  document.addEventListener("astro:page-load", () => {
+  useEffect(() => {
     const script = document.createElement("script");
-    const container = document.querySelector("#utterances-container");
+    // const container = document.querySelector("#utterances-container");
+    const container = ref.current;
     const currentTheme = localStorage.theme;
     Object.entries({
       src: "https://utteranc.es/client.js",
@@ -21,5 +23,9 @@
     });
 
     container?.appendChild(script);
-  });
-</script>
+  }, [slug]);
+
+  return <div ref={ref}></div>;
+};
+
+export default Utterances;

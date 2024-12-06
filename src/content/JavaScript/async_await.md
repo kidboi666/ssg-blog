@@ -90,17 +90,16 @@ async function f(x) {
 이 함수를 원래 함수를 감싸는, 프라미스를 반환하는 함수라고 생각해 보십시오.
 
 ```javascript
-
 function f(x) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function (resolve, reject) {
     try {
-      resolve((function(x)) {
+      resolve(function (x) {
         // 바디
-      })
+      });
     } catch (e) {
-      reject(e)
+      reject(e);
     }
-  })
+  });
 }
 ```
 

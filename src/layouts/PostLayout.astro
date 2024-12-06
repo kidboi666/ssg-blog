@@ -6,7 +6,7 @@ import { formatDateElapsed, formatDateToMDY } from "src/utils/formatDate";
 import Tags from "@components/Tags";
 import ProseWrapper from "@components/ProseWrapper.astro";
 import TableOfContents from "@components/TableOfContents";
-import Utterances from "@components/Utterances.astro";
+import Utterances from "@components/Utterances";
 
 const { frontmatter } = Astro.props;
 const { slug } = Astro.params;
@@ -42,7 +42,7 @@ const { headings } = await post.render(post);
       <div class="mt-8 w-full border-b border-zinc-200 dark:border-zinc-800">
       </div>
       <div class="my-8 w-full px-4 lg:max-w-[752px] xl:px-8">
-        <Utterances />
+        <Utterances client:only="preact" slug={slug} />
       </div>
     </div>
     <TableOfContents client:only="preact" headings={headings} />
