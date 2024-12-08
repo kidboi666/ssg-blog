@@ -3,7 +3,6 @@ import { defineConfig } from "astro/config";
 
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
-import remarkMermaid from "remark-mermaidjs";
 import { astroExpressiveCode } from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
 import rehypeMermaid from "@beoe/rehype-mermaid";
