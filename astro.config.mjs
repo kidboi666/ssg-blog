@@ -6,6 +6,7 @@ import tailwind from "@astrojs/tailwind";
 import remarkMermaid from "remark-mermaidjs";
 import { astroExpressiveCode } from "astro-expressive-code";
 import { pluginLineNumbers } from "@expressive-code/plugin-line-numbers";
+import rehypeMermaid from "@beoe/rehype-mermaid";
 
 // https://astro.build/config
 export default defineConfig({
@@ -18,6 +19,14 @@ export default defineConfig({
     preact({ include: ["**/preact/*"] }),
   ],
   markdown: {
-    remarkPlugins: [remarkMermaid],
+    rehypePlugins: [
+        [rehypeMermaid,
+          {
+            strategy: "file",
+            fsPath: "public/beoe",
+            webPath: "/beoe",
+            darkScheme: "class",
+          }]
+    ]
   },
 });

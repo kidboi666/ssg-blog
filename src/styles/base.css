@@ -13,3 +13,11 @@ html.light {
   visibility: visible; /* 라이트 모드 설정 후 보이도록 */
   color-scheme: light;
 }
+
+html.light .beoe-dark {
+  display: none;
+}
+
+html.dark .beoe-light {
+  display: none;
+}
