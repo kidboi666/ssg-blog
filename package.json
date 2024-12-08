@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/preact": "^3.5.3",
+    "@astrojs/sitemap": "^3.2.1",
     "@astrojs/tailwind": "^5.1.2",
     "@beoe/rehype-mermaid": "^0.3.0",
     "@expressive-code/plugin-line-numbers": "^0.38.3",
