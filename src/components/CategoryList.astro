@@ -40,7 +40,7 @@ const posts = await getCollection(category);
             size="sm"
             intent={post.slug === slug ? "primary" : "secondary"}
             padding="md"
-            className="ml-1 text-nowrap line-clamp-1"
+            className="ml-1"
           >
             {post.data.title}
           </Link>

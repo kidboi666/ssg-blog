@@ -69,7 +69,7 @@ const Link = ({
           {children}
         </>
       ) : (
-        <>{children}</>
+        <span class="line-clamp-1">{children}</span>
       )}
     </a>
   );
