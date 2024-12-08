@@ -4,6 +4,9 @@ dist/
 # generated types
 .astro/
 
+# beoe
+public/beoe/
+
 # dependencies
 node_modules/
 

@@ -21,7 +21,7 @@ export default defineConfig({
     rehypePlugins: [
         [rehypeMermaid,
           {
-            strategy: "file",
+            strategy: "inline",
             fsPath: "public/beoe",
             webPath: "/beoe",
             darkScheme: "class",
