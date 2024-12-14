@@ -11,6 +11,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://kidboi666.netlify.app',
   integrations: [tailwind(), astroExpressiveCode({
     themes: ["one-dark-pro"],
     plugins: [pluginLineNumbers()],
