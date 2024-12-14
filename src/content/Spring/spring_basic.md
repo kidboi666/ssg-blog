@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: 스프링 기본소양
 category: Spring
-tags:[Spring, IoC, DI, Bean, SpringContainer, AOP]
+tags: [Spring, IoC, DI, Bean, SpringContainer, AOP]
 pubDate: 2024-12-13
 ---
 
